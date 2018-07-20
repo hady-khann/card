@@ -1,0 +1,41 @@
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\bin\Debug\card.exe.config
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\bin\Debug\card.exe
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\bin\Debug\card.pdb
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.csprojResolveAssemblyReference.cache
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.frm_main.resources
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.Properties.Resources.resources
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.csproj.GenerateResource.Cache
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.exe
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.pdb
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.frm_reg_sanj.resources
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.frm_print.resources
+c:\users\hady_khan\documents\visual studio 2017\Projects\card\card\obj\Debug\card.frm_view.resources
+C:\Users\Mr_Kargar\Desktop\card\card\bin\Debug\card.exe.config
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.exe
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.pdb
+C:\Users\Mr_Kargar\Desktop\card\card\bin\Debug\card.exe
+C:\Users\Mr_Kargar\Desktop\card\card\bin\Debug\card.pdb
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.csprojResolveAssemblyReference.cache
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.frm_main.resources
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.frm_print.resources
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.frm_reg_sanj.resources
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.frm_view.resources
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.Properties.Resources.resources
+C:\Users\Mr_Kargar\Desktop\card\card\obj\Debug\card.csproj.GenerateResource.Cache
+C:\Users\Mr_Kargar\Desktop\card\card\bin\Debug\azmon_sanjesh.accdb
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\card.exe.config
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\card.exe
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\card.pdb
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\EntityFramework.dll
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\EntityFramework.xml
+C:\Users\Hady_KHan\Desktop\card\card\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.frm_print.resources
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.frm_currentexam.resources
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.frm_setting.resources
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.frm_view.resources
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.Properties.Resources.resources
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.csproj.GenerateResource.Cache
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.exe
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.pdb
+C:\Users\Hady_KHan\Desktop\card\card\obj\Debug\card.csprojResolveAssemblyReference.cache

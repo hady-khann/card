@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_cardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="db_cardEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_current" EntityType="db_cardModel.tbl_current" />
+    <EntitySet Name="tbl_main" EntityType="db_cardModel.tbl_main" />
+  </EntityContainer>
+  <EntityType Name="tbl_current">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="row" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="side" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="field_main" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="field_other" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="floor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="classnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_end" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="picture" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_main">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="row" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="side" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="filed_main" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="field_other" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="floor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="classnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_end" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="v_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="picture" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

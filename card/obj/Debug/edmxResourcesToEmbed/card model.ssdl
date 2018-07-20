@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_cardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_current">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="row" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" />
+    <Property Name="side" Type="nvarchar" MaxLength="50" />
+    <Property Name="field_main" Type="nvarchar" MaxLength="50" />
+    <Property Name="field_other" Type="nvarchar" MaxLength="50" />
+    <Property Name="floor" Type="nvarchar" MaxLength="50" />
+    <Property Name="classnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_start" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_end" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="picture" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="tbl_main">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="row" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" />
+    <Property Name="side" Type="nvarchar" MaxLength="50" />
+    <Property Name="filed_main" Type="nvarchar" MaxLength="50" />
+    <Property Name="field_other" Type="nvarchar" MaxLength="50" />
+    <Property Name="floor" Type="nvarchar" MaxLength="50" />
+    <Property Name="classnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_start" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_end" Type="nvarchar" MaxLength="50" />
+    <Property Name="v_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="picture" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityContainer Name="db_cardModelStoreContainer">
+    <EntitySet Name="tbl_current" EntityType="Self.tbl_current" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_main" EntityType="Self.tbl_main" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
