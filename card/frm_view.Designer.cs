@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_view));
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btn_del = new System.Windows.Forms.Button();
             this.btn_multiselect = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.foundedrecords = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.conm_frm_reg.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -709,6 +711,16 @@
             this.listBox1.TabIndex = 52;
             this.listBox1.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
             // 
+            // foundedrecords
+            // 
+            this.foundedrecords.AutoSize = true;
+            this.foundedrecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foundedrecords.Location = new System.Drawing.Point(328, 32);
+            this.foundedrecords.Name = "foundedrecords";
+            this.foundedrecords.Size = new System.Drawing.Size(150, 20);
+            this.foundedrecords.TabIndex = 58;
+            this.foundedrecords.Text = "تعداد عناصر یافت شده : ";
+            // 
             // frm_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -717,6 +729,7 @@
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1251, 784);
             this.ContextMenuStrip = this.conm_frm_reg;
+            this.Controls.Add(this.foundedrecords);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.listBox2);
@@ -737,6 +750,7 @@
             this.Controls.Add(this.btn_del);
             this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_view";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -811,5 +825,6 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label foundedrecords;
     }
 }

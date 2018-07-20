@@ -31,6 +31,7 @@ namespace card
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_print));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
             this.lbl_v_end = new System.Windows.Forms.Label();
@@ -107,7 +108,7 @@ namespace card
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(291, 33);
+            this.label21.Location = new System.Drawing.Point(221, 33);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 25);
             this.label21.TabIndex = 31;
@@ -197,22 +198,20 @@ namespace card
             // 
             this.lbl_side.AutoSize = true;
             this.lbl_side.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_side.Location = new System.Drawing.Point(16, 33);
+            this.lbl_side.Location = new System.Drawing.Point(6, 33);
             this.lbl_side.Name = "lbl_side";
-            this.lbl_side.Size = new System.Drawing.Size(269, 25);
+            this.lbl_side.Size = new System.Drawing.Size(199, 25);
             this.lbl_side.TabIndex = 22;
-            this.lbl_side.Text = " ------------------------------------";
+            this.lbl_side.Text = " --------------------------";
             // 
             // lbl_name
             // 
-            this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(459, 53);
+            this.lbl_name.Location = new System.Drawing.Point(373, 37);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(124, 25);
-            this.lbl_name.TabIndex = 21;
-            this.lbl_name.Text = "----------------";
-            this.lbl_name.TextChanged += new System.EventHandler(this.lbl_name_TextChanged);
+            this.lbl_name.Size = new System.Drawing.Size(100, 23);
+            this.lbl_name.TabIndex = 32;
+            this.lbl_name.Text = "------------";
             // 
             // label10
             // 
@@ -308,11 +307,11 @@ namespace card
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(459, 18);
+            this.label1.Location = new System.Drawing.Point(479, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 25);
+            this.label1.Size = new System.Drawing.Size(140, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "نام و نام خانوادگی";
+            this.label1.Text = "نام و نام خانوادگی :";
             // 
             // lblt3
             // 
@@ -463,6 +462,7 @@ namespace card
             this.ClientSize = new System.Drawing.Size(662, 437);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_print";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

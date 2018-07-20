@@ -66,9 +66,24 @@ namespace card
             dgv.Columns[9].HeaderText = "تا شماره";
             dgv.Columns[10].HeaderText = "تعداد داوطلبان";
             dgv.Columns[11].HeaderText = "آدرس تصویر";
-
+            givrownum();
         }
+        private void givrownum()
+        {
+            dgv.SelectAll();
+            int rownum = dgv.RowCount;
 
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                int t = Convert.ToInt32(dgv.SelectedRows[i].Cells[0].Value);
+                tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == t);
+                tblm.row = rownum;
+                rownum--;
+
+                dbmanager.SaveChanges();
+            }
+            dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
+        }
         private void picb_image_Click(object sender, EventArgs e)
         {
 
@@ -117,7 +132,7 @@ namespace card
             dbmanager.SaveChanges();
 
             dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
-
+            givrownum();
         }
 
         private void btn_printall_Click(object sender, EventArgs e)
@@ -213,7 +228,7 @@ namespace card
                 dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
                 pic = false;
             }
-            
+            givrownum();
         }
 
 
@@ -231,6 +246,7 @@ namespace card
             {
                 MessageBox.Show(ex.Message);
             }
+            givrownum();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -391,6 +407,7 @@ namespace card
             {
                 dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
             }
+            foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -398,6 +415,7 @@ namespace card
             try
             {
                 dgv.DataSource = dbmanager.tbl_main.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+                foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
             }
             catch (Exception)
             {
@@ -416,6 +434,5 @@ namespace card
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

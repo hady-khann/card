@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_setting));
             this.txt_org = new System.Windows.Forms.TextBox();
             this.txt_exname = new System.Windows.Forms.TextBox();
             this.txt_year = new System.Windows.Forms.TextBox();
@@ -226,6 +227,7 @@
             this.ClientSize = new System.Drawing.Size(677, 448);
             this.ContextMenuStrip = this.contm_frm_main;
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_setting";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

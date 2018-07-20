@@ -17,11 +17,8 @@ namespace card
         {
             InitializeComponent();
         }
-        List<int> lselected = new List<int>();
-        uint selectedrecords = 0;
         frm_print frmp = new frm_print();
         db_cardEntities dbmanager = new db_cardEntities();
-        bool multiselect = false;
         private void frm_currentexam_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -65,6 +62,7 @@ namespace card
                 dbmanager.tbl_current.Remove(tblc);
                 dbmanager.SaveChanges();
                 dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                givrownum();
             }
             catch (Exception)
             {
@@ -72,62 +70,30 @@ namespace card
             }
         }
 
-        private void btn_dellist_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lselected.Remove(Convert.ToInt32(listBox1.SelectedItem));
-                listBox2.Items.Remove(listBox2.SelectedItem);
-                listBox1.Items.Remove(listBox1.SelectedItem);
-                selectedrecords--;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(" لطفا یک ردیف را انتخاب کنید و یا مجدد سعی کنید");
-            }
-
-        }
         private void dgv_Click(object sender, EventArgs e)
         {
             int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-            tbl_current tblm = dbmanager.tbl_current.FirstOrDefault(x => x.id == row);
-            if (multiselect == true)
-            {
-                listBox1.Items.Add(tblm.id);
-                listBox2.Items.Add(tblm.name + " | " + tblm.side);
-                lselected.Add(tblm.id);
-                selectedrecords++;
-            }
+            Properties.Settings.Default.id = row;
+            Properties.Settings.Default.Save();
         }
 
-        private void btn_multiprint_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
-            lselected.Clear();
-            multiselect = true;
-        }
 
         private void btn_print_Click(object sender, EventArgs e)
         {
 
-            if (selectedrecords > 0)
+            try
             {
                 Properties.Settings.Default.multiprint = true;
                 Properties.Settings.Default.Save();
-                new frm_print().Show();
+
                 this.Visible = false;
                 this.Enabled = false;
+                new frm_print().Show();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("لطفا رکورد های مورد نظر را انتخاب کنید");
+                MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btn_finish_Click(object sender, EventArgs e)
-        {
-            multiselect = false;
         }
 
         private void لیستکلاعضاToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +108,7 @@ namespace card
             try
             {
                 dgv.DataSource = dbmanager.tbl_current.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+                foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
             }
             catch (Exception)
             {
@@ -156,19 +123,7 @@ namespace card
             {
                 dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
             }
-        }
-
-        private void listBox5_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Properties.Settings.Default.id = Convert.ToInt32(listBox1.SelectedItem);
-                listBox2.SelectedIndex = listBox1.SelectedIndex;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
         }
 
         private void btn_printallcard_Click(object sender, EventArgs e)
@@ -180,8 +135,8 @@ namespace card
             new frm_print().Show();
 
         }
-        
-       
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
