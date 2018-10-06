@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -46,6 +49,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +102,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frm_start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_start.Designer.cs">
+      <DependentUpon>frm_start.cs</DependentUpon>
+    </Compile>
     <Compile Include="tbl_current.cs">
       <DependentUpon>card model.tt</DependentUpon>
     </Compile>
@@ -122,10 +132,16 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_start.resx">
+      <DependentUpon>frm_start.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="card model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>card model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="card model.edmx.diagram">
       <DependentUpon>card model.edmx</DependentUpon>
     </None>

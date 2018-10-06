@@ -22,7 +22,7 @@ namespace card
         OpenFileDialog ofd = new OpenFileDialog();
         db_cardEntities dbmanager = new db_cardEntities();
         List<int> lselect = new List<int>();
-
+        int row = 0;
         bool pic = false;
         private void frm_view_Load(object sender, EventArgs e)
         {
@@ -30,8 +30,7 @@ namespace card
 
             //dbmanager.tbl_main.SqlQuery("SELECT id as [ID] , name as [نام ], side as [ سمت ] , date as[ تاریخ] ,filed_main as [حوزه اصلی] ,field_other as [حوزه فرعی], floor as [طبقه], classnumber as [شماره کلاس], v_start as [از شماره],v_end as [تا شماره], v_number as [تعداد داوطلبان], year as  [سال], picture as [عکس], exam as [امتحان] from tbl_main order by side, v_start, name ;").ToList();
             //load form properties
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
+            //this.FormBorderStyle = FormBorderStyle.None;
             lbl_date.Text = Properties.Settings.Default.date;
             lblt3.Text = Properties.Settings.Default.str_orgname;
             lblt4.Text = Properties.Settings.Default.str_exname;
@@ -47,7 +46,6 @@ namespace card
                 picb_logo.Image = Properties.Resources.سازمان_سنجش;
                 picb_logo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            this.ControlBox = false;
 
             //load database into dgv
 
@@ -234,13 +232,19 @@ namespace card
 
         private void btn_del_Click(object sender, EventArgs e)
         {
+
             try
             {
                 int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
                 tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == row);
-                dbmanager.tbl_main.Remove(tblm);
-                dbmanager.SaveChanges();
-                dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
+                string mtemp = string.Format("  آیا مایل به حذف ردیف : {0} با نام : {1} و سمت : {2} هستید ؟؟" , tblm.row,tblm.name,tblm.side);
+                DialogResult dres = MessageBox.Show( mtemp , "هشدار حذف",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if (dres==DialogResult.Yes)
+                {
+                    dbmanager.tbl_main.Remove(tblm);
+                    dbmanager.SaveChanges();
+                    dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList(); 
+                }
             }
             catch (Exception ex)
             {
@@ -251,20 +255,21 @@ namespace card
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_setting frms = new frm_setting();
-            frms.Show();
+            new frm_setting().Show();
+            this.Visible = false;
+            this.Enabled = false;
         }
 
         private void dgv_Click(object sender, EventArgs e)
         {
-            int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
+            row = int.Parse(dgv.SelectedCells[0].Value.ToString());
             tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == row);
             if (multiselect == true)
             {
                 
-                listBox1.Items.Add(dgv.SelectedCells[0].Value);
+                listBox1.Items.Add(dgv.SelectedCells[1].Value);
                 listBox2.Items.Add(tblm.name + " | " + tblm.side);
-                lselect.Add(Convert.ToInt32(dgv.SelectedCells[0].Value));
+                lselect.Add(Convert.ToInt32(dgv.SelectedCells[1].Value));
             }
 
 
@@ -338,7 +343,7 @@ namespace card
                 foreach (var item in lselect)
                 {
                     {
-                        tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == item);
+                        tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.row == item);
                         tbl_current tblc = new tbl_current();
                         tbl_current tblc2 = dbmanager.tbl_current.FirstOrDefault(x => x.name == tblm.name);
 
@@ -433,6 +438,58 @@ namespace card
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dres = folderBrowserDialog1.ShowDialog();
+            if (dres == DialogResult.OK)
+            {
+                Properties.Settings.Default.bayganifilepath = folderBrowserDialog1.SelectedPath + "\\";
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                Exporttoexcel(dgv, bayganifilename.Text, Properties.Settings.Default.bayganifilepath);
+                MessageBox.Show("فایل اکسل شما با موفقیت در مسیر " + Properties.Settings.Default.bayganifilepath + "" + bayganifilename.Text + " ذخیره شد ");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(" لطفا در انتخاب نام از علائم / \\ : * < > | استفاده نکنید");
+            }
+        }
+        public void Exporttoexcel(DataGridView datagridviewid, string excelfilename, string filepath)
+        {
+            Microsoft.Office.Interop.Excel.Application obex = new Microsoft.Office.Interop.Excel.Application();
+            obex.Application.Workbooks.Add(Type.Missing);
+            obex.Columns.ColumnWidth = 18;
+
+
+            for (int i = 1; i < 12; i++)
+            {
+                obex.Cells[1, i] = datagridviewid.Columns[i].HeaderText;
+            }
+
+            for (int i = 0; i < datagridviewid.Rows.Count; i++)
+            {
+                for (int j = 1; j < 12; j++)
+                {
+                    if (datagridviewid.Rows[i].Cells[j].Value != null)
+                    {
+                        obex.Cells[i + 2, j] = datagridviewid.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+            }
+
+            obex.ActiveWorkbook.SaveCopyAs(@"" + filepath + "" + excelfilename + ".xlsx");
+            obex.ActiveWorkbook.Saved = true;
+
         }
     }
 }

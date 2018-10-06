@@ -73,6 +73,26 @@ namespace card.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shamsiicon_en {
+            get {
+                object obj = ResourceManager.GetObject("shamsiicon-en", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shamsiicon_fa {
+            get {
+                object obj = ResourceManager.GetObject("shamsiicon-fa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap تعاونی_سازمان_سنجش {
             get {
                 object obj = ResourceManager.GetObject("تعاونی سازمان سنجش", resourceCulture);

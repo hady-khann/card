@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "card", "card\card.csproj", "{75684BDF-E0C8-4FE5-83A3-EC35AC68B890}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Card Manager Setup", "Card Manager Setup\Card Manager Setup.vdproj", "{0AC1BF72-F382-4E94-8656-10428498C2D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{75684BDF-E0C8-4FE5-83A3-EC35AC68B890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75684BDF-E0C8-4FE5-83A3-EC35AC68B890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75684BDF-E0C8-4FE5-83A3-EC35AC68B890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC1BF72-F382-4E94-8656-10428498C2D0}.Debug|Any CPU.ActiveCfg = Debug
+		{0AC1BF72-F382-4E94-8656-10428498C2D0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

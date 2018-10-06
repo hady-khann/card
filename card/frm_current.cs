@@ -19,10 +19,10 @@ namespace card
         }
         frm_print frmp = new frm_print();
         db_cardEntities dbmanager = new db_cardEntities();
-        private void frm_currentexam_Load(object sender, EventArgs e)
+        private void Frm_currentexam_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.None;
-
+            //Frm_start frms = new Frm_start();
+            //frms.Show();
 
             dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
             dgv.Columns[0].HeaderText = "ID";
@@ -37,7 +37,7 @@ namespace card
             dgv.Columns[9].HeaderText = "تا شماره";
             dgv.Columns[10].HeaderText = "تعداد داوطلبان";
             dgv.Columns[11].HeaderText = "آدرس تصویر";
-            givrownum();
+            Giverownum();
         }
 
         private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,22 +47,30 @@ namespace card
 
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_view frmv1 = new frm_view();
-            frmv1.Visible = true;
-            frmv1.Enabled = true;
+            frm_view frmv1 = new frm_view()
+            {
+                Visible = true,
+                Enabled = true
+            };
             this.Close();
         }
 
-        private void btn_del_Click(object sender, EventArgs e)
+        private void Btn_del_Click(object sender, EventArgs e)
         {
+            int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
+            tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == row);
+
             try
             {
-                int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-                tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == row);
-                dbmanager.tbl_current.Remove(tblc);
-                dbmanager.SaveChanges();
-                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
-                givrownum();
+                string mtemp = string.Format("  آیا مایل به حذف ردیف : {0} با نام : {1} و سمت : {2} هستید ؟؟", tblc.row, tblc.name, tblc.side);
+                DialogResult dres = MessageBox.Show(mtemp, "هشدار حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dres == DialogResult.Yes)
+                {
+                    dbmanager.tbl_current.Remove(tblc);
+                    dbmanager.SaveChanges();
+                    dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                }
+                Giverownum();
             }
             catch (Exception)
             {
@@ -70,7 +78,7 @@ namespace card
             }
         }
 
-        private void dgv_Click(object sender, EventArgs e)
+        private void Dgv_Click(object sender, EventArgs e)
         {
             int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
             Properties.Settings.Default.id = row;
@@ -78,7 +86,7 @@ namespace card
         }
 
 
-        private void btn_print_Click(object sender, EventArgs e)
+        private void Btn_print_Click(object sender, EventArgs e)
         {
 
             try
@@ -103,7 +111,7 @@ namespace card
             this.Enabled = false;
         }
 
-        private void comboBox1_TextChanged(object sender, EventArgs e)
+        private void ComboBox1_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -116,7 +124,7 @@ namespace card
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             dgv.DataSource = dbmanager.tbl_current.Where(x => x.name.Contains(textBox1.Text)).ToList();
             if (textBox1.Text == "" || textBox1.Text == " ")
@@ -126,7 +134,7 @@ namespace card
             foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
         }
 
-        private void btn_printallcard_Click(object sender, EventArgs e)
+        private void Btn_printallcard_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.multiprint = false;
             Properties.Settings.Default.Save();
@@ -138,16 +146,11 @@ namespace card
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            DialogResult dres = folderBrowserDialog1.ShowDialog();
-            if (dres == DialogResult.OK)
-            {
-                Properties.Settings.Default.bayganifilepath = folderBrowserDialog1.SelectedPath + "\\";
-                Properties.Settings.Default.Save();
-            }
+            
         }
-        private void givrownum()
+        private void Giverownum()
         {
             dgv.SelectAll();
             int rownum = dgv.RowCount;
@@ -165,30 +168,20 @@ namespace card
         }
 
 
-        private void btn_baygani_Click(object sender, EventArgs e)
+        private void Btn_baygani_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
-                exporttoexcel(dgv, bayganifilename.Text, Properties.Settings.Default.bayganifilepath);
-                MessageBox.Show("فایل اکسل شما با موفقیت در مسیر " + Properties.Settings.Default.bayganifilepath + "" + bayganifilename.Text + " ذخیره شد ");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(" لطفا در انتخاب نام از علائم / \\ : * < > | استفاده نکنید");
-            }
 
         }
 
 
-        private void btn_memberlist_Click(object sender, EventArgs e)
+        private void Btn_memberlist_Click(object sender, EventArgs e)
         {
 
             try
             {
                 dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
-                exporttoexcel2(dgv, listfilename.Text, Properties.Settings.Default.listfilepath);
+                Exporttoexcel2(dgv, listfilename.Text, Properties.Settings.Default.listfilepath);
                 MessageBox.Show("فایل اکسل شما با موفقیت در مسیر " + Properties.Settings.Default.listfilepath + "" + listfilename.Text + " ذخیره شد ");
             }
             catch (Exception)
@@ -198,34 +191,8 @@ namespace card
 
         }
 
-        public void exporttoexcel(DataGridView datagridviewid, string excelfilename, string filepath)
-        {
-            Microsoft.Office.Interop.Excel.Application obex = new Microsoft.Office.Interop.Excel.Application();
-            obex.Application.Workbooks.Add(Type.Missing);
-            obex.Columns.ColumnWidth = 18;
-
-
-            for (int i = 1; i < 12; i++)
-            {
-                obex.Cells[1, i] = datagridviewid.Columns[i].HeaderText;
-            }
-
-            for (int i = 0; i < datagridviewid.Rows.Count; i++)
-            {
-                for (int j = 1; j < 12; j++)
-                {
-                    if (datagridviewid.Rows[i].Cells[j].Value != null)
-                    {
-                        obex.Cells[i + 2, j] = datagridviewid.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-            }
-
-            obex.ActiveWorkbook.SaveCopyAs(@"" + filepath + "" + excelfilename + ".xlsx");
-            obex.ActiveWorkbook.Saved = true;
-
-        }
-        public void exporttoexcel2(DataGridView datagridviewid, string excelfilename, string filepath)
+       
+        public void Exporttoexcel2(DataGridView datagridviewid, string excelfilename, string filepath)
         {
             Microsoft.Office.Interop.Excel.Application obex = new Microsoft.Office.Interop.Excel.Application();
             obex.Application.Workbooks.Add(Type.Missing);
@@ -254,7 +221,7 @@ namespace card
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             DialogResult dres = folderBrowserDialog1.ShowDialog();
             if (dres == DialogResult.OK)
@@ -264,10 +231,11 @@ namespace card
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
-            givrownum();
+            Giverownum();
         }
+
     }
 
 }

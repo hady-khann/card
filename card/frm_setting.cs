@@ -20,8 +20,8 @@ namespace card
         private void frm_setting_Load(object sender, EventArgs e)
         {
             txt_date.Text = Properties.Settings.Default.date;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            
             txt_exname.Text = Properties.Settings.Default.str_exname;
             txt_org.Text = Properties.Settings.Default.str_orgname;
             txt_year.Text = Properties.Settings.Default.str_year;
@@ -38,29 +38,13 @@ namespace card
             Properties.Settings.Default.Save();
         }
 
-        private void ثبتتغییراتفرمToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (cmbo_logo.SelectedIndex == 0)
-            {
-                Properties.Settings.Default.logo = "سازمان سنجش";
-            }
-            if (cmbo_logo.SelectedIndex == 1)
-            {
-                Properties.Settings.Default.logo = "تعاونی سازمان سنجش";
-            }
-            Properties.Settings.Default.date = txt_date.Text;
-            Properties.Settings.Default.str_exname = txt_exname.Text;
-            Properties.Settings.Default.str_orgname = txt_org.Text;
-            Properties.Settings.Default.str_year = txt_year.Text;
-            Properties.Settings.Default.Save();
-        }
 
         private void ثبتنامکارتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_view frmv = new frm_view();
-            frmv.Show();
-            this.Visible = false;
-            this.Enabled = false;
+            frmv.Visible = true;
+            frmv.Enabled = true;
+            this.Close();
         }
 
         private void cmbo_logo_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +61,23 @@ namespace card
                 picb_logo.SizeMode = PictureBoxSizeMode.StretchImage;
                 Properties.Settings.Default.logo = "تعاونی سازمان سنجش";
             }
+            Properties.Settings.Default.Save();
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            if (cmbo_logo.SelectedIndex == 0)
+            {
+                Properties.Settings.Default.logo = "سازمان سنجش";
+            }
+            if (cmbo_logo.SelectedIndex == 1)
+            {
+                Properties.Settings.Default.logo = "تعاونی سازمان سنجش";
+            }
+            Properties.Settings.Default.date = txt_date.Text;
+            Properties.Settings.Default.str_exname = txt_exname.Text;
+            Properties.Settings.Default.str_orgname = txt_org.Text;
+            Properties.Settings.Default.str_year = txt_year.Text;
             Properties.Settings.Default.Save();
         }
     }

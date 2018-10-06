@@ -85,6 +85,11 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.foundedrecords = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.bayganifilename = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.conm_frm_reg.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,14 +111,14 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1227, 256);
+            this.dgv.Size = new System.Drawing.Size(1258, 256);
             this.dgv.TabIndex = 0;
             this.dgv.Click += new System.EventHandler(this.dgv_Click);
             // 
             // btn_del
             // 
             this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.Location = new System.Drawing.Point(9, 408);
+            this.btn_del.Location = new System.Drawing.Point(21, 400);
             this.btn_del.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(113, 34);
@@ -125,7 +130,7 @@
             // btn_multiselect
             // 
             this.btn_multiselect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_multiselect.Location = new System.Drawing.Point(1045, 650);
+            this.btn_multiselect.Location = new System.Drawing.Point(1076, 662);
             this.btn_multiselect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_multiselect.Name = "btn_multiselect";
             this.btn_multiselect.Size = new System.Drawing.Size(141, 34);
@@ -183,7 +188,7 @@
             // 
             // btn_ed
             // 
-            this.btn_ed.Location = new System.Drawing.Point(9, 470);
+            this.btn_ed.Location = new System.Drawing.Point(21, 462);
             this.btn_ed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ed.Name = "btn_ed";
             this.btn_ed.Size = new System.Drawing.Size(113, 34);
@@ -194,7 +199,7 @@
             // 
             // btn_insert
             // 
-            this.btn_insert.Location = new System.Drawing.Point(9, 346);
+            this.btn_insert.Location = new System.Drawing.Point(21, 338);
             this.btn_insert.Margin = new System.Windows.Forms.Padding(4);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(113, 34);
@@ -213,7 +218,7 @@
             this.groupBox2.Controls.Add(this.lblt1);
             this.groupBox2.Controls.Add(this.lblt2);
             this.groupBox2.Controls.Add(this.picb_image);
-            this.groupBox2.Location = new System.Drawing.Point(129, 325);
+            this.groupBox2.Location = new System.Drawing.Point(164, 346);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(688, 452);
             this.groupBox2.TabIndex = 25;
@@ -556,7 +561,7 @@
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(9, 530);
+            this.btn_reset.Location = new System.Drawing.Point(21, 522);
             this.btn_reset.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(113, 34);
@@ -567,7 +572,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1045, 688);
+            this.btn_add.Location = new System.Drawing.Point(1076, 700);
             this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(141, 34);
@@ -579,7 +584,7 @@
             // btn_finish
             // 
             this.btn_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_finish.Location = new System.Drawing.Point(967, 728);
+            this.btn_finish.Location = new System.Drawing.Point(998, 740);
             this.btn_finish.Margin = new System.Windows.Forms.Padding(4);
             this.btn_finish.Name = "btn_finish";
             this.btn_finish.Size = new System.Drawing.Size(141, 34);
@@ -591,7 +596,7 @@
             // btn_dellist
             // 
             this.btn_dellist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dellist.Location = new System.Drawing.Point(897, 688);
+            this.btn_dellist.Location = new System.Drawing.Point(928, 700);
             this.btn_dellist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_dellist.Name = "btn_dellist";
             this.btn_dellist.Size = new System.Drawing.Size(141, 34);
@@ -602,7 +607,7 @@
             // 
             // btn_current
             // 
-            this.btn_current.Location = new System.Drawing.Point(897, 650);
+            this.btn_current.Location = new System.Drawing.Point(928, 662);
             this.btn_current.Margin = new System.Windows.Forms.Padding(4);
             this.btn_current.Name = "btn_current";
             this.btn_current.Size = new System.Drawing.Size(141, 34);
@@ -672,17 +677,17 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1185, 343);
+            this.label14.Location = new System.Drawing.Point(1216, 355);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 20);
+            this.label14.Size = new System.Drawing.Size(40, 20);
             this.label14.TabIndex = 57;
-            this.label14.Text = "شماره";
+            this.label14.Text = "ردیف";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1021, 343);
+            this.label15.Location = new System.Drawing.Point(1052, 355);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 20);
             this.label15.TabIndex = 56;
@@ -695,9 +700,9 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.HorizontalScrollbar = true;
             this.listBox2.ItemHeight = 22;
-            this.listBox2.Location = new System.Drawing.Point(823, 378);
+            this.listBox2.Location = new System.Drawing.Point(868, 390);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(342, 268);
+            this.listBox2.Size = new System.Drawing.Size(328, 268);
             this.listBox2.TabIndex = 53;
             // 
             // listBox1
@@ -705,7 +710,7 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 22;
-            this.listBox1.Location = new System.Drawing.Point(1171, 378);
+            this.listBox1.Location = new System.Drawing.Point(1202, 390);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(68, 268);
             this.listBox1.TabIndex = 52;
@@ -721,25 +726,71 @@
             this.foundedrecords.TabIndex = 58;
             this.foundedrecords.Text = "تعداد عناصر یافت شده : ";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(21, 643);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 33);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "مسیر فایل اعضا";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(21, 692);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 33);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "بایگانی اعضا";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(30, 747);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 20);
+            this.label16.TabIndex = 62;
+            this.label16.Text = "نام فایل اعضا";
+            // 
+            // bayganifilename
+            // 
+            this.bayganifilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bayganifilename.Location = new System.Drawing.Point(9, 771);
+            this.bayganifilename.Name = "bayganifilename";
+            this.bayganifilename.Size = new System.Drawing.Size(141, 27);
+            this.bayganifilename.TabIndex = 63;
+            // 
             // frm_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1251, 784);
+            this.ClientSize = new System.Drawing.Size(1282, 816);
             this.ContextMenuStrip = this.conm_frm_reg;
             this.Controls.Add(this.foundedrecords);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.bayganifilename);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_current);
             this.Controls.Add(this.btn_dellist);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_finish);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_reset);
@@ -755,7 +806,7 @@
             this.Name = "frm_view";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "فرم مشاهده اعضای ثبت شده";
+            this.Text = "فرم مشاهده کل اعضای ثبت شده";
             this.Load += new System.EventHandler(this.frm_view_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.conm_frm_reg.ResumeLayout(false);
@@ -826,5 +877,10 @@
         private System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label foundedrecords;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox bayganifilename;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
