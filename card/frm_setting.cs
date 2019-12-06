@@ -38,15 +38,6 @@ namespace card
             Properties.Settings.Default.Save();
         }
 
-
-        private void ثبتنامکارتToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_view frmv = new frm_view();
-            frmv.Visible = true;
-            frmv.Enabled = true;
-            this.Close();
-        }
-
         private void cmbo_logo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbo_logo.SelectedIndex == 0)
@@ -79,6 +70,13 @@ namespace card
             Properties.Settings.Default.str_orgname = txt_org.Text;
             Properties.Settings.Default.str_year = txt_year.Text;
             Properties.Settings.Default.Save();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new frm_view().Show();
+            this.Visible = false;
+            this.Enabled = false;
         }
     }
 }

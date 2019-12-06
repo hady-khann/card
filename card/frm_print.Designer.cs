@@ -108,7 +108,7 @@ namespace card
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(221, 33);
+            this.label21.Location = new System.Drawing.Point(205, 37);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 25);
             this.label21.TabIndex = 31;
@@ -198,18 +198,19 @@ namespace card
             // 
             this.lbl_side.AutoSize = true;
             this.lbl_side.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_side.Location = new System.Drawing.Point(6, 33);
+            this.lbl_side.Location = new System.Drawing.Point(6, 37);
             this.lbl_side.Name = "lbl_side";
-            this.lbl_side.Size = new System.Drawing.Size(199, 25);
+            this.lbl_side.Size = new System.Drawing.Size(178, 25);
             this.lbl_side.TabIndex = 22;
-            this.lbl_side.Text = " --------------------------";
+            this.lbl_side.Text = " -----------------------";
+            this.lbl_side.Click += new System.EventHandler(this.lbl_side_Click);
             // 
             // lbl_name
             // 
             this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(373, 37);
+            this.lbl_name.Location = new System.Drawing.Point(288, 37);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(100, 23);
+            this.lbl_name.Size = new System.Drawing.Size(185, 23);
             this.lbl_name.TabIndex = 32;
             this.lbl_name.Text = "------------";
             // 
@@ -316,11 +317,11 @@ namespace card
             // lblt3
             // 
             this.lblt3.AutoSize = true;
-            this.lblt3.Font = new System.Drawing.Font("Adobe Arabic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblt3.Location = new System.Drawing.Point(221, 62);
             this.lblt3.Name = "lblt3";
             this.lblt3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt3.Size = new System.Drawing.Size(156, 22);
+            this.lblt3.Size = new System.Drawing.Size(204, 25);
             this.lblt3.TabIndex = 23;
             this.lblt3.Text = "سازمان سنجش آموزش کشور";
             this.lblt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -328,11 +329,11 @@ namespace card
             // lblt5
             // 
             this.lblt5.AutoSize = true;
-            this.lblt5.Font = new System.Drawing.Font("Adobe Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblt5.Location = new System.Drawing.Point(261, 123);
             this.lblt5.Name = "lblt5";
             this.lblt5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt5.Size = new System.Drawing.Size(74, 26);
+            this.lblt5.Size = new System.Drawing.Size(102, 29);
             this.lblt5.TabIndex = 22;
             this.lblt5.Text = "سال ۱۳۹۷";
             this.lblt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,11 +341,11 @@ namespace card
             // lblt4
             // 
             this.lblt4.AutoSize = true;
-            this.lblt4.Font = new System.Drawing.Font("Adobe Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblt4.Location = new System.Drawing.Point(197, 99);
             this.lblt4.Name = "lblt4";
             this.lblt4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt4.Size = new System.Drawing.Size(202, 26);
+            this.lblt4.Size = new System.Drawing.Size(260, 29);
             this.lblt4.TabIndex = 21;
             this.lblt4.Text = "آزمون کارشناسی ارشد ناپیوسته";
             this.lblt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,11 +362,11 @@ namespace card
             // lblt1
             // 
             this.lblt1.AutoSize = true;
-            this.lblt1.Font = new System.Drawing.Font("Adobe Arabic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblt1.Location = new System.Drawing.Point(237, 18);
             this.lblt1.Name = "lblt1";
             this.lblt1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt1.Size = new System.Drawing.Size(122, 22);
+            this.lblt1.Size = new System.Drawing.Size(161, 25);
             this.lblt1.TabIndex = 18;
             this.lblt1.Text = "جمهوری اسلامی ایران";
             this.lblt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,11 +374,11 @@ namespace card
             // lblt2
             // 
             this.lblt2.AutoSize = true;
-            this.lblt2.Font = new System.Drawing.Font("Adobe Arabic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblt2.Location = new System.Drawing.Point(212, 40);
             this.lblt2.Name = "lblt2";
             this.lblt2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt2.Size = new System.Drawing.Size(175, 22);
+            this.lblt2.Size = new System.Drawing.Size(223, 25);
             this.lblt2.TabIndex = 19;
             this.lblt2.Text = "وزارت علوم ، تحقیقات و فناوری";
             this.lblt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

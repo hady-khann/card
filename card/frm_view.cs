@@ -98,19 +98,6 @@ namespace card
 
         }
 
-        private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_currentexam frmreg = new frm_currentexam();
-            frmreg.Enabled = true;
-            frmreg.Visible = true;
-            this.Close();
-        }
-
         private void btn_ed_Click(object sender, EventArgs e)
         {
             int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
@@ -195,6 +182,7 @@ namespace card
                     pic = false;
                 }
             }
+
             else
             {
                 //if (pic == false || txt_fieldmain.Text == "" || txt_fieldother.Text == "" || txt_name.Text == "" || txt_startnum.Text == "" || txt_volunteer.Text == "")
@@ -253,13 +241,6 @@ namespace card
             givrownum();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            new frm_setting().Show();
-            this.Visible = false;
-            this.Enabled = false;
-        }
-
         private void dgv_Click(object sender, EventArgs e)
         {
             row = int.Parse(dgv.SelectedCells[0].Value.ToString());
@@ -310,7 +291,7 @@ namespace card
         bool multiselect = false;
         private void btn_print_Click(object sender, EventArgs e)
         {
-
+            //multiselect btn
             listBox1.Items.Clear();
             multiselect = true;
         }
@@ -490,6 +471,21 @@ namespace card
             obex.ActiveWorkbook.SaveCopyAs(@"" + filepath + "" + excelfilename + ".xlsx");
             obex.ActiveWorkbook.Saved = true;
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frm_currentexam frmreg = new frm_currentexam();
+            frmreg.Enabled = true;
+            frmreg.Visible = true;
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new frm_setting().Show();
+            this.Visible = false;
+            this.Enabled = false;
         }
     }
 }

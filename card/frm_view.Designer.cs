@@ -90,12 +90,16 @@
             this.label16 = new System.Windows.Forms.Label();
             this.bayganifilename = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.conm_frm_reg.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -158,7 +162,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 24);
             this.toolStripMenuItem1.Text = "تنظیمات";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -171,7 +174,6 @@
             this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 24);
             this.toolStripMenuItem2.Text = "بازگشت";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.بازگشتToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -184,7 +186,6 @@
             this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 24);
             this.toolStripMenuItem3.Text = "خروج";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
             // 
             // btn_ed
             // 
@@ -306,11 +307,12 @@
             // 
             this.lbl_date.AutoSize = true;
             this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_date.Location = new System.Drawing.Point(541, 135);
+            this.lbl_date.Location = new System.Drawing.Point(515, 135);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbl_date.Size = new System.Drawing.Size(0, 29);
+            this.lbl_date.Size = new System.Drawing.Size(139, 29);
             this.lbl_date.TabIndex = 21;
+            this.lbl_date.Text = "yyyy/mm/dd";
             this.lbl_date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
@@ -425,7 +427,7 @@
             this.txt_fieldother.Location = new System.Drawing.Point(9, 134);
             this.txt_fieldother.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_fieldother.Name = "txt_fieldother";
-            this.txt_fieldother.Size = new System.Drawing.Size(247, 30);
+            this.txt_fieldother.Size = new System.Drawing.Size(223, 30);
             this.txt_fieldother.TabIndex = 4;
             // 
             // label4
@@ -441,17 +443,17 @@
             // txt_fieldmain
             // 
             this.txt_fieldmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fieldmain.Location = new System.Drawing.Point(261, 134);
+            this.txt_fieldmain.Location = new System.Drawing.Point(260, 134);
             this.txt_fieldmain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_fieldmain.Name = "txt_fieldmain";
-            this.txt_fieldmain.Size = new System.Drawing.Size(245, 30);
+            this.txt_fieldmain.Size = new System.Drawing.Size(240, 30);
             this.txt_fieldmain.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(317, 106);
+            this.label3.Location = new System.Drawing.Point(330, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 25);
             this.label3.TabIndex = 5;
@@ -768,6 +770,29 @@
             this.bayganifilename.Size = new System.Drawing.Size(141, 27);
             this.bayganifilename.TabIndex = 63;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::card.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::card.Properties.Resources.setting;
+            this.pictureBox2.Location = new System.Drawing.Point(1207, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(63, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 72;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // frm_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -776,6 +801,8 @@
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1282, 816);
             this.ContextMenuStrip = this.conm_frm_reg;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.foundedrecords);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -816,6 +843,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -882,5 +911,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox bayganifilename;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

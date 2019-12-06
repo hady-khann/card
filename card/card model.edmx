@@ -4,50 +4,50 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="db_cardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="db_cardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="tbl_current">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="row" Type="int" />
-          <Property Name="name" Type="nvarchar" MaxLength="150" />
-          <Property Name="side" Type="nvarchar" MaxLength="50" />
-          <Property Name="field_main" Type="nvarchar" MaxLength="50" />
-          <Property Name="field_other" Type="nvarchar" MaxLength="50" />
-          <Property Name="floor" Type="nvarchar" MaxLength="50" />
-          <Property Name="classnumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_start" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_end" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_number" Type="nvarchar" MaxLength="50" />
-          <Property Name="picture" Type="nvarchar" MaxLength="2000" />
+          <Property Name="name" MaxLength="150" Type="nvarchar" />
+          <Property Name="side" MaxLength="50" Type="nvarchar" />
+          <Property Name="field_main" MaxLength="50" Type="nvarchar" />
+          <Property Name="field_other" MaxLength="50" Type="nvarchar" />
+          <Property Name="floor" MaxLength="50" Type="nvarchar" />
+          <Property Name="classnumber" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_start" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_end" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_number" MaxLength="50" Type="nvarchar" />
+          <Property Name="picture" MaxLength="2000" Type="nvarchar" />
         </EntityType>
         <EntityType Name="tbl_main">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="row" Type="int" />
-          <Property Name="name" Type="nvarchar" MaxLength="150" />
-          <Property Name="side" Type="nvarchar" MaxLength="50" />
-          <Property Name="filed_main" Type="nvarchar" MaxLength="50" />
-          <Property Name="field_other" Type="nvarchar" MaxLength="50" />
-          <Property Name="floor" Type="nvarchar" MaxLength="50" />
-          <Property Name="classnumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_start" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_end" Type="nvarchar" MaxLength="50" />
-          <Property Name="v_number" Type="nvarchar" MaxLength="50" />
-          <Property Name="picture" Type="nvarchar" MaxLength="2000" />
+          <Property Name="name" MaxLength="150" Type="nvarchar" />
+          <Property Name="side" MaxLength="50" Type="nvarchar" />
+          <Property Name="filed_main" MaxLength="50" Type="nvarchar" />
+          <Property Name="field_other" MaxLength="50" Type="nvarchar" />
+          <Property Name="floor" MaxLength="50" Type="nvarchar" />
+          <Property Name="classnumber" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_start" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_end" MaxLength="50" Type="nvarchar" />
+          <Property Name="v_number" MaxLength="50" Type="nvarchar" />
+          <Property Name="picture" MaxLength="2000" Type="nvarchar" />
         </EntityType>
         <EntityContainer Name="db_cardModelStoreContainer">
-          <EntitySet Name="tbl_current" EntityType="Self.tbl_current" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_main" EntityType="Self.tbl_main" Schema="dbo" store:Type="Tables" />
+          <EntitySet xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Name="tbl_current" EntityType="Self.tbl_current" Schema="dbo" store:Type="Tables" />
+          <EntitySet xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Name="tbl_main" EntityType="Self.tbl_main" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="db_cardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="db_cardEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="db_cardModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="db_cardEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="tbl_current" EntityType="db_cardModel.tbl_current" />
           <EntitySet Name="tbl_main" EntityType="db_cardModel.tbl_main" />
         </EntityContainer>
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="row" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="side" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -72,7 +72,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="row" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="side" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -132,22 +132,22 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-      </DesignerInfoPropertySet>
-    </Options>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="true" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+    <edmx:Diagrams />
+  </edmx:Designer>
 </edmx:Edmx>

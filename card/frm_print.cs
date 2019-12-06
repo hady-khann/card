@@ -19,10 +19,10 @@ namespace card
             InitializeComponent();
         }
         db_cardEntities dbmanager = new db_cardEntities();
-        List<int> lselected = new List<int>();
+        
         int min=0;
         int max=0;
-        int ii = 10;
+        
         private void frm_print_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -48,7 +48,7 @@ namespace card
 
 
 
-            if (Properties.Settings.Default.multiprint == false)
+            if (Properties.Settings.Default.multiprint == true)
             {
                 min = dbmanager.tbl_current.Min(x => x.id);
                 max = dbmanager.tbl_current.Max(x => x.id);
@@ -78,7 +78,7 @@ namespace card
                                 picb_image.Image = Properties.Resources.person_unknown;
                             }
 
-                            ii = i - 1;
+                            
                             print();
                         }
                         catch (Exception)
@@ -103,9 +103,8 @@ namespace card
 
 
 
-            if (Properties.Settings.Default.multiprint == true)
+            if (Properties.Settings.Default.multiprint == false)
             {
-                Properties.Settings.Default.multiprint = false;
                     if (cancel == false)
                     {
 
@@ -153,25 +152,6 @@ namespace card
 
 
 
-
-
-
-
-
-
-
-        private void lbl_name_TextChanged(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.multiprint == true)
-            {
-                print();
-            }
-        }
-
-
-
-
-
         public void print()
         {
             PrintDocument pd = new PrintDocument();
@@ -181,7 +161,7 @@ namespace card
 
         private void PrintImage(object o, PrintPageEventArgs e)
         {
-            ii++;
+            
             int x = SystemInformation.WorkingArea.X;
             int y = SystemInformation.WorkingArea.Y;
             int width = this.Width;
@@ -196,7 +176,7 @@ namespace card
             this.DrawToBitmap(img, bounds);
             Point p = new Point(100, 100);
             e.Graphics.DrawImage(img, p);
-            img.Save(@"C:\Users\Hady_KHan\Desktop\latestprintedimage.jpg");
+            img.Save(@"C:\latestimage.jpg");
         }
 
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,12 +198,9 @@ namespace card
             cancel = true;
         }
 
+        private void lbl_side_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
+        }
     }
 }

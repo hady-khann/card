@@ -40,11 +40,6 @@ namespace card
             Giverownum();
         }
 
-        private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_view frmv1 = new frm_view()
@@ -91,7 +86,7 @@ namespace card
 
             try
             {
-                Properties.Settings.Default.multiprint = true;
+                Properties.Settings.Default.multiprint = false;
                 Properties.Settings.Default.Save();
 
                 this.Visible = false;
@@ -102,13 +97,6 @@ namespace card
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void لیستکلاعضاToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new frm_view().Show();
-            this.Visible = false;
-            this.Enabled = false;
         }
 
         private void ComboBox1_TextChanged(object sender, EventArgs e)
@@ -236,6 +224,12 @@ namespace card
             Giverownum();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new frm_view().Show();
+            this.Visible = false;
+            this.Enabled = false;
+        }
     }
 
 }

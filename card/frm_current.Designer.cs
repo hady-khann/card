@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_currentexam));
-            this.conm_frm_reg = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.لیستکلاعضاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_memberlist = new System.Windows.Forms.Button();
             this.btn_printallcard = new System.Windows.Forms.Button();
@@ -50,40 +45,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.foundedrecords = new System.Windows.Forms.Label();
-            this.conm_frm_reg.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // conm_frm_reg
-            // 
-            this.conm_frm_reg.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.conm_frm_reg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.لیستکلاعضاToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.خروجToolStripMenuItem});
-            this.conm_frm_reg.Name = "conm_frm_reg";
-            this.conm_frm_reg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.conm_frm_reg.Size = new System.Drawing.Size(174, 58);
-            // 
-            // لیستکلاعضاToolStripMenuItem
-            // 
-            this.لیستکلاعضاToolStripMenuItem.Name = "لیستکلاعضاToolStripMenuItem";
-            this.لیستکلاعضاToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.لیستکلاعضاToolStripMenuItem.Text = "لیست کل اعضا";
-            this.لیستکلاعضاToolStripMenuItem.Click += new System.EventHandler(this.لیستکلاعضاToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(170, 6);
-            // 
-            // خروجToolStripMenuItem
-            // 
-            this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
-            this.خروجToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
-            this.خروجToolStripMenuItem.Text = "خروج";
-            this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
             // 
             // btn_print
             // 
@@ -259,13 +224,24 @@
             this.foundedrecords.TabIndex = 69;
             this.foundedrecords.Text = "تعداد عناصر یافت شده :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::card.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frm_currentexam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1244, 603);
-            this.ContextMenuStrip = this.conm_frm_reg;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.foundedrecords);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -288,17 +264,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فرم اعضای فعال";
             this.Load += new System.EventHandler(this.Frm_currentexam_Load);
-            this.conm_frm_reg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip conm_frm_reg;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem خروجToolStripMenuItem;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_memberlist;
         private System.Windows.Forms.Button btn_printallcard;
@@ -307,7 +280,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripMenuItem لیستکلاعضاToolStripMenuItem;
         public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
@@ -316,5 +288,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label foundedrecords;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
