@@ -28,7 +28,7 @@ namespace card
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = false;
             lblt3.Text = Properties.Settings.Default.str_orgname;
-            lblt4.Text = Properties.Settings.Default.str_exname;
+            lblt4.Text = Properties.Settings.Default.str_exname; 
             lblt5.Text = Properties.Settings.Default.str_year;
             lbl_date.Text = Properties.Settings.Default.date;
             if (Properties.Settings.Default.logo == "تعاونی سازمان سنجش")

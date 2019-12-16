@@ -105,3 +105,17 @@ C:\Users\hady_khann\Desktop\Favorite\GitHub\card\card\obj\Debug\card.Frm_start.r
 C:\Users\hady_khann\Desktop\Favorite\GitHub\card\card\obj\Debug\card.csproj.GenerateResource.Cache
 C:\Users\hady_khann\Desktop\Favorite\GitHub\card\card\obj\Debug\card.exe
 C:\Users\hady_khann\Desktop\Favorite\GitHub\card\card\obj\Debug\card.pdb
+D:\GitHub\card\card\obj\Debug\card.csprojAssemblyReference.cache
+D:\GitHub\card\card\obj\Debug\card.frm_print.resources
+D:\GitHub\card\card\obj\Debug\card.frm_currentexam.resources
+D:\GitHub\card\card\obj\Debug\card.frm_setting.resources
+D:\GitHub\card\card\obj\Debug\card.frm_view.resources
+D:\GitHub\card\card\obj\Debug\card.Frm_start.resources
+D:\GitHub\card\card\obj\Debug\card.csproj.GenerateResource.cache
+D:\GitHub\card\card\obj\Debug\card.exe
+D:\GitHub\card\card\obj\Debug\card.pdb
+D:\GitHub\card\card\obj\Debug\card.Properties.Resources.resources
+D:\GitHub\card\card\bin\Debug\card.exe.config
+D:\GitHub\card\card\bin\Debug\card.exe
+D:\GitHub\card\card\bin\Debug\card.pdb
+D:\GitHub\card\card\obj\Debug\card.csproj.CopyComplete

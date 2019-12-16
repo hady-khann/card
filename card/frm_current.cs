@@ -78,6 +78,8 @@ namespace card
             int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
             Properties.Settings.Default.id = row;
             Properties.Settings.Default.Save();
+            
+
         }
 
 
