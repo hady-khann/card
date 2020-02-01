@@ -39,13 +39,13 @@
             this.contm_frm_main = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ثبتنامکارتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_date = new System.Windows.Forms.MaskedTextBox();
             this.btn_register = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbo_logo = new System.Windows.Forms.ComboBox();
             this.picb_image = new System.Windows.Forms.PictureBox();
             this.picb_logo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_date = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.contm_frm_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_image)).BeginInit();
@@ -140,19 +140,29 @@
             this.ثبتنامکارتToolStripMenuItem});
             this.contm_frm_main.Name = "contm_frm_main";
             this.contm_frm_main.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contm_frm_main.Size = new System.Drawing.Size(179, 34);
+            this.contm_frm_main.Size = new System.Drawing.Size(195, 38);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(191, 6);
             // 
             // ثبتنامکارتToolStripMenuItem
             // 
             this.ثبتنامکارتToolStripMenuItem.Name = "ثبتنامکارتToolStripMenuItem";
             this.ثبتنامکارتToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.ثبتنامکارتToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.ثبتنامکارتToolStripMenuItem.Size = new System.Drawing.Size(194, 28);
             this.ثبتنامکارتToolStripMenuItem.Text = "بازگشت";
+            // 
+            // txt_date
+            // 
+            this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_date.Location = new System.Drawing.Point(192, 169);
+            this.txt_date.Mask = "0000/00/00";
+            this.txt_date.Name = "txt_date";
+            this.txt_date.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_date.Size = new System.Drawing.Size(178, 30);
+            this.txt_date.TabIndex = 13;
             // 
             // btn_register
             // 
@@ -222,16 +232,6 @@
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // txt_date
-            // 
-            this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_date.Location = new System.Drawing.Point(192, 169);
-            this.txt_date.Mask = "0000/00/00";
-            this.txt_date.Name = "txt_date";
-            this.txt_date.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_date.Size = new System.Drawing.Size(178, 30);
-            this.txt_date.TabIndex = 13;
             // 
             // frm_setting
             // 

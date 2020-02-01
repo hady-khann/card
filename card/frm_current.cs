@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Xml;
 
 namespace card
 {
@@ -17,27 +18,30 @@ namespace card
         {
             InitializeComponent();
         }
+
         frm_print frmp = new frm_print();
-        db_cardEntities dbmanager = new db_cardEntities();
+        db_card dbmanagerr = new db_card();
+        
+        //db_cardEntities dbmanager = new db_cardEntities();
         private void Frm_currentexam_Load(object sender, EventArgs e)
         {
-            //Frm_start frms = new Frm_start();
-            //frms.Show();
+            dbmanagerr.ReadXml("db_card.xml");
 
-            dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+            dgv.DataSource = dbmanagerr.tbl_current;
+            dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
+
             dgv.Columns[0].HeaderText = "ID";
-            dgv.Columns[1].HeaderText = "ردیف";
-            dgv.Columns[2].HeaderText = "نام";
-            dgv.Columns[3].HeaderText = "سمت";
-            dgv.Columns[4].HeaderText = "حوزه اصلی";
-            dgv.Columns[5].HeaderText = "حوزه فرعی";
-            dgv.Columns[6].HeaderText = "طبقه";
-            dgv.Columns[7].HeaderText = "شماره کلاس";
-            dgv.Columns[8].HeaderText = "از شماره";
-            dgv.Columns[9].HeaderText = "تا شماره";
-            dgv.Columns[10].HeaderText = "تعداد داوطلبان";
-            dgv.Columns[11].HeaderText = "آدرس تصویر";
-            Giverownum();
+            dgv.Columns[1].HeaderText = "نام";
+            dgv.Columns[2].HeaderText = "سمت";
+            dgv.Columns[3].HeaderText = "حوزه اصلی";
+            dgv.Columns[4].HeaderText = "حوزه فرعی";
+            dgv.Columns[5].HeaderText = "طبقه";
+            dgv.Columns[6].HeaderText = "شماره کلاس";
+            dgv.Columns[7].HeaderText = "از شماره";
+            dgv.Columns[8].HeaderText = "تا شماره";
+            dgv.Columns[9].HeaderText = "تعداد داوطلبان";
+            dgv.Columns[10].HeaderText = "آدرس تصویر";
+            
         }
 
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,32 +56,45 @@ namespace card
 
         private void Btn_del_Click(object sender, EventArgs e)
         {
-            int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-            tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == row);
-
+            
+            
             try
             {
-                string mtemp = string.Format("  آیا مایل به حذف ردیف : {0} با نام : {1} و سمت : {2} هستید ؟؟", tblc.row, tblc.name, tblc.side);
+                int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
+                db_card.tbl_currentRow tblc = dbmanagerr.tbl_current.FirstOrDefault(x => x.id == row);
+
+                string mtemp =(tblc.name + " : آیا مایل به حذف رکورد با نام " +Environment.NewLine+ " و سمت : " + tblc.side + " هستید ؟؟ "  );
                 DialogResult dres = MessageBox.Show(mtemp, "هشدار حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dres == DialogResult.Yes)
                 {
-                    dbmanager.tbl_current.Remove(tblc);
-                    dbmanager.SaveChanges();
-                    dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                    dbmanagerr.tbl_current.Removetbl_currentRow(tblc);
+                    dbmanagerr.WriteXml("db_card.xml");
+
+                    dgv.DataSource = dbmanagerr.tbl_current;
+                    dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
                 }
-                Giverownum();
             }
             catch (Exception)
             {
-                MessageBox.Show("لطفا ابتدا یکی از رکوردها را انتخاب کنید");
+                MessageBox.Show("لطفا ابتدا یکی از رکوردها را برای حذف انتخاب کنید");
             }
         }
 
         private void Dgv_Click(object sender, EventArgs e)
         {
-            int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-            Properties.Settings.Default.id = row;
-            Properties.Settings.Default.Save();
+            try
+            {
+
+                Properties.Settings.Default.multiprint = false;
+                Properties.Settings.Default.singleprint = Convert.ToInt32(dgv.SelectedCells[0].Value);
+                Properties.Settings.Default.Save();
+                int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
+                Properties.Settings.Default.id = row;
+                Properties.Settings.Default.Save();
+            }
+            catch (Exception)
+            {
+            }
             
 
         }
@@ -88,24 +105,31 @@ namespace card
 
             try
             {
+                int id = Convert.ToInt32(dgv.SelectedCells[0].Value);
                 Properties.Settings.Default.multiprint = false;
+                Properties.Settings.Default.singleprint = id ;
                 Properties.Settings.Default.Save();
 
+
+                new frm_print().Show();
                 this.Visible = false;
                 this.Enabled = false;
-                new frm_print().Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                //MessageBox.Show("لطفا ابتدا یکی از رکوردها را برای پرینت تکی انتخاب کنید");
             }
         }
 
         private void ComboBox1_TextChanged(object sender, EventArgs e)
         {
+            
             try
             {
-                dgv.DataSource = dbmanager.tbl_current.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+                
+                dgv.DataSource = dbmanagerr.tbl_current.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
                 foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
             }
             catch (Exception)
@@ -116,18 +140,22 @@ namespace card
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            dgv.DataSource = dbmanager.tbl_current.Where(x => x.name.Contains(textBox1.Text)).ToList();
+            
+            dgv.DataSource = dbmanagerr.tbl_current.Where(x => x.name.Contains(textBox1.Text)).ToList();
+            dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
             if (textBox1.Text == "" || textBox1.Text == " ")
             {
-                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                dgv.DataSource = dbmanagerr.tbl_current;
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
             }
             foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
         }
 
         private void Btn_printallcard_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.multiprint = false;
+            Properties.Settings.Default.multiprint = true;
             Properties.Settings.Default.Save();
+
             this.Enabled = false;
             this.Visible = false;
             new frm_print().Show();
@@ -140,22 +168,7 @@ namespace card
         {
             
         }
-        private void Giverownum()
-        {
-            dgv.SelectAll();
-            int rownum = dgv.RowCount;
-
-            for (int i = 0; i < dgv.RowCount; i++)
-            {
-                int t = Convert.ToInt32(dgv.SelectedRows[i].Cells[0].Value);
-                tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == t);
-                tblc.row = rownum;
-                rownum--;
-
-                dbmanager.SaveChanges();
-            }
-            dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
-        }
+        
 
 
         private void Btn_baygani_Click(object sender, EventArgs e)
@@ -170,7 +183,7 @@ namespace card
 
             try
             {
-                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+                dgv.DataSource = dbmanagerr.tbl_current;
                 Exporttoexcel2(dgv, listfilename.Text, Properties.Settings.Default.listfilepath);
                 MessageBox.Show("فایل اکسل شما با موفقیت در مسیر " + Properties.Settings.Default.listfilepath + "" + listfilename.Text + " ذخیره شد ");
             }
@@ -189,7 +202,7 @@ namespace card
             obex.Columns.ColumnWidth = 18;
 
 
-            for (int i = 1; i < 4; i++)
+            for (int i = 1; i <= 4; i++)
             {
                 obex.Cells[1, i] = datagridviewid.Columns[i].HeaderText;
             }
@@ -221,16 +234,25 @@ namespace card
             }
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            Giverownum();
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             new frm_view().Show();
             this.Visible = false;
             this.Enabled = false;
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Delete)
+                {
+                    btn_del.PerformClick();
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 

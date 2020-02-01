@@ -1,0 +1,170 @@
+<?xml version="1.0" standalone="yes"?>
+<db_card xmlns="http://tempuri.org/db_card.xsd">
+  <tbl_main>
+    <id>19</id>
+    <name>هاددددددی</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>21</id>
+    <name>haddddy</name>
+    <side>سمعی بصری</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>27</id>
+    <name>haddddy</name>
+    <side>سمعی بصری</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>C:\Users\hady_khann\Pictures\11Capture.PNG</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>28</id>
+    <name>هاددددددی</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>C:\Users\hady_khann\Pictures\11Capture.PNG</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>30</id>
+    <name>هاددددددی</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>C:\Users\hady_khann\Pictures\11Capture.PNG</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>33</id>
+    <name>هاددددددی</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>C:\Users\hady_khann\Pictures\11Capture.PNG</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>34</id>
+    <name>kk</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+  </tbl_main>
+  <tbl_main>
+    <id>35</id>
+    <name>بب</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+  </tbl_main>
+  <tbl_current>
+    <id>4</id>
+    <name>هادییییی</name>
+    <side>تاسیسات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_current>
+  <tbl_current>
+    <id>5</id>
+    <name>هاددددددی</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_current>
+  <tbl_current>
+    <id>6</id>
+    <name>haaaady</name>
+    <side>تطبیق عکس</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_current>
+  <tbl_current>
+    <id>7</id>
+    <name>haddddy</name>
+    <side>سمعی بصری</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_current>
+  <tbl_current>
+    <id>8</id>
+    <name>هادییییی</name>
+    <side>تاسیسات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>C:\Users\hady_khann\Pictures\11Capture.PNG</picture>
+  </tbl_current>
+</db_card>

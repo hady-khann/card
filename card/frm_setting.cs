@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace card
         {
             txt_date.Text = Properties.Settings.Default.date;
             //this.FormBorderStyle = FormBorderStyle.None;
-            
+
             txt_exname.Text = Properties.Settings.Default.str_exname;
             txt_org.Text = Properties.Settings.Default.str_orgname;
             txt_year.Text = Properties.Settings.Default.str_year;
@@ -36,7 +37,20 @@ namespace card
                 picb_logo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             Properties.Settings.Default.Save();
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
 
         private void cmbo_logo_SelectedIndexChanged(object sender, EventArgs e)
         {

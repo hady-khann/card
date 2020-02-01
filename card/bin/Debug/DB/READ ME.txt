@@ -1,6 +1,0 @@
-import the db_card.bacpac file in sqlserver 2016
-help : 
-1 - open Microsoft SQL Server Management Studio
-2 - right click on Database
-3 - choose import Data-tier Application 
-4 - continue the levels ...

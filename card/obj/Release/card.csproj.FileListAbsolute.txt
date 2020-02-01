@@ -1,0 +1,12 @@
+D:\GitHub\card\card\bin\Release\card.exe.config
+D:\GitHub\card\card\bin\Release\card.exe
+D:\GitHub\card\card\bin\Release\card.pdb
+D:\GitHub\card\card\obj\Release\card.frm_print.resources
+D:\GitHub\card\card\obj\Release\card.frm_currentexam.resources
+D:\GitHub\card\card\obj\Release\card.frm_setting.resources
+D:\GitHub\card\card\obj\Release\card.frm_view.resources
+D:\GitHub\card\card\obj\Release\card.Properties.Resources.resources
+D:\GitHub\card\card\obj\Release\card.Frm_start.resources
+D:\GitHub\card\card\obj\Release\card.csproj.GenerateResource.cache
+D:\GitHub\card\card\obj\Release\card.exe
+D:\GitHub\card\card\obj\Release\card.pdb

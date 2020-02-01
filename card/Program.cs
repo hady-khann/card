@@ -18,7 +18,7 @@ namespace card
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_start());
-            Thread.Sleep(5000);
+            Thread.Sleep(1500);
             Application.Run(new frm_currentexam());
         }
     }

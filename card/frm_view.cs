@@ -20,7 +20,8 @@ namespace card
         }
 
         OpenFileDialog ofd = new OpenFileDialog();
-        db_cardEntities dbmanager = new db_cardEntities();
+        db_card dbmanagerr = new db_card();
+        //db_cardEntities dbmanager = new db_cardEntities();
         List<int> lselect = new List<int>();
         int row = 0;
         bool pic = false;
@@ -50,38 +51,24 @@ namespace card
             //load database into dgv
 
 
-            dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
+            dbmanagerr.ReadXml("db_card.xml");
+            dgv.DataSource = dbmanagerr.tbl_main;
+            dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
 
             dgv.Columns[0].HeaderText = "ID";
-            dgv.Columns[1].HeaderText = "ردیف";
-            dgv.Columns[2].HeaderText = "نام";
-            dgv.Columns[3].HeaderText = "سمت";
-            dgv.Columns[4].HeaderText = "حوزه اصلی";
-            dgv.Columns[5].HeaderText = "حوزه فرعی";
-            dgv.Columns[6].HeaderText = "طبقه";
-            dgv.Columns[7].HeaderText = "شماره کلاس";
-            dgv.Columns[8].HeaderText = "از شماره";
-            dgv.Columns[9].HeaderText = "تا شماره";
-            dgv.Columns[10].HeaderText = "تعداد داوطلبان";
-            dgv.Columns[11].HeaderText = "آدرس تصویر";
-            givrownum();
-        }
-        private void givrownum()
-        {
-            dgv.SelectAll();
-            int rownum = dgv.RowCount;
+            dgv.Columns[1].HeaderText = "نام";
+            dgv.Columns[2].HeaderText = "سمت";
+            dgv.Columns[3].HeaderText = "حوزه اصلی";
+            dgv.Columns[4].HeaderText = "حوزه فرعی";
+            dgv.Columns[5].HeaderText = "طبقه";
+            dgv.Columns[6].HeaderText = "شماره کلاس";
+            dgv.Columns[7].HeaderText = "از شماره";
+            dgv.Columns[8].HeaderText = "تا شماره";
+            dgv.Columns[9].HeaderText = "تعداد داوطلبان";
+            dgv.Columns[10].HeaderText = "آدرس تصویر";
 
-            for (int i = 0; i < dgv.RowCount; i++)
-            {
-                int t = Convert.ToInt32(dgv.SelectedRows[i].Cells[0].Value);
-                tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == t);
-                tblm.row = rownum;
-                rownum--;
-
-                dbmanager.SaveChanges();
-            }
-            dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
         }
+
         private void picb_image_Click(object sender, EventArgs e)
         {
 
@@ -98,26 +85,44 @@ namespace card
 
         }
 
+
         private void btn_ed_Click(object sender, EventArgs e)
         {
-            int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-            tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == row);
+            try
+            {
+                int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
 
-            string strside = cmbo_side.SelectedItem.ToString();
-            tblm.name = txt_name.Text;
-            tblm.side = strside;
-            tblm.picture = ofd.FileName;
-            tblm.floor = txt_floor.Text;
-            tblm.classnumber = txt_class.Text;
-            tblm.v_number = txt_volunteer.Text;
-            tblm.v_start = txt_startnum.Text;
-            tblm.v_end = txt_endnum.Text;
-            tblm.filed_main = txt_fieldmain.Text;
-            tblm.field_other = txt_fieldother.Text;
-            dbmanager.SaveChanges();
+                //Delete row
+                db_card.tbl_mainRow tblm = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == row);
 
-            dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
-            givrownum();
+                dbmanagerr.tbl_main.Removetbl_mainRow(tblm);
+
+                dbmanagerr.WriteXml("db_card.xml");
+
+                //insert row
+                string strside = cmbo_side.SelectedItem.ToString();
+
+                if (pic == false)
+                {
+                    dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                    txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text, "null");
+                    dbmanagerr.WriteXml("db_card.xml");
+                }
+                else if (pic == true)
+                {
+                    dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                    txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text, ofd.FileName.ToString());
+                    dbmanagerr.WriteXml("db_card.xml");
+                }
+
+                dgv.DataSource = dbmanagerr.tbl_main;
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("لطفا ابتدا یکی از رکوردها را برای ویرایش انتخاب کنید");
+            }
         }
 
         private void btn_printall_Click(object sender, EventArgs e)
@@ -137,146 +142,151 @@ namespace card
         {
 
         }
-
         private void btn_insert_Click(object sender, EventArgs e)
         {
-            tbl_main tblm = new tbl_main();
-
-            tbl_main tblm2 = dbmanager.tbl_main.FirstOrDefault(x => x.name == txt_name.Text);
-
-            if (tblm2 != null)
+            
+            try
             {
-                DialogResult dr = MessageBox.Show("  نام مورد نظر در جدول وجود دارد . " + "  نام  : " + tblm2.name + "    سمت  : " + tblm2.side + Environment.NewLine + " آیا مایل به وارد کردن دوباره نام هستید ؟؟", "هشدار نام تکراری", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+                db_card.tbl_mainRow tblm2 = dbmanagerr.tbl_main.FirstOrDefault(x => x.name == txt_name.Text);
 
-
-                if (dr == DialogResult.Yes)
+                if (tblm2 != null)
                 {
-                    //if (pic == false || txt_fieldmain.Text == "" || txt_fieldother.Text == "" || txt_name.Text == "" || txt_startnum.Text == "" || txt_volunteer.Text == "")
-                    //{
-                    //    MessageBox.Show("لطفا تمام فیلد ها را پر کنید");
-                    //    return;
-                    //}
-                    string strside = cmbo_side.SelectedItem.ToString();
-                    tblm.name = txt_name.Text;
-                    tblm.side = strside;
+                    DialogResult dr = MessageBox.Show("  نام مورد نظر در جدول وجود دارد . " + Environment.NewLine + "  نام  : " + tblm2.name + "    سمت  : " + tblm2.side + Environment.NewLine + " آیا مایل به وارد کردن دوباره نام هستید ؟؟", "هشدار نام تکراری", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        string strside = cmbo_side.SelectedItem.ToString();
+                        if (pic==false)
+                        {
+
+                            dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                           txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text, "null");
+
+                            dbmanagerr.WriteXml("db_card.xml");
+                        }
+                        else if(pic==true)
+                        {
+                            dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                            txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text,ofd.FileName);
+                            dbmanagerr.WriteXml("db_card.xml");
+                        }
+                    }
+                }
+
+                else
+                {
+                    string strside = cmbo_side.SelectedItem.ToString();
                     if (pic == false)
                     {
-                        tblm.picture = "null";
+
+                        dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                       txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text, "null");
+
+                        dbmanagerr.WriteXml("db_card.xml");
                     }
-                    else if (pic == true)
+                    else if(pic == true)
                     {
-                        tblm.picture = ofd.FileName;
+                        dbmanagerr.tbl_main.Addtbl_mainRow(txt_name.Text, strside, txt_fieldmain.Text, txt_fieldother.Text, txt_floor.Text,
+                        txt_class.Text, txt_startnum.Text, txt_endnum.Text, txt_volunteer.Text,ofd.FileName);
+                        dbmanagerr.WriteXml("db_card.xml");
                     }
-                    tblm.floor = txt_floor.Text;
-                    tblm.classnumber = txt_class.Text;
-                    tblm.v_number = txt_volunteer.Text;
-                    tblm.v_start = txt_startnum.Text;
-                    tblm.v_end = txt_endnum.Text;
-                    tblm.filed_main = txt_fieldmain.Text;
-                    tblm.field_other = txt_fieldother.Text;
-                    dbmanager.tbl_main.Add(tblm);
-                    dbmanager.SaveChanges();
-                    dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
-                    pic = false;
                 }
+                dgv.DataSource = dbmanagerr.tbl_main;
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
             }
-
-            else
+            catch (Exception)
             {
-                //if (pic == false || txt_fieldmain.Text == "" || txt_fieldother.Text == "" || txt_name.Text == "" || txt_startnum.Text == "" || txt_volunteer.Text == "")
-                //{
-                //    MessageBox.Show("لطفا تمام فیلد ها را پر کنید");
-                //    return;
-                //}
-                string strside = cmbo_side.SelectedItem.ToString();
-                tblm.name = txt_name.Text;
-                tblm.side = strside;
-
-                if (pic == false)
-                {
-                    tblm.picture = "null";
-                }
-                else if (pic == true)
-                {
-                    tblm.picture = ofd.FileName;
-                }
-                tblm.floor = txt_floor.Text;
-                tblm.classnumber = txt_class.Text;
-                tblm.v_number = txt_volunteer.Text;
-                tblm.v_start = txt_startnum.Text;
-                tblm.v_end = txt_endnum.Text;
-                tblm.filed_main = txt_fieldmain.Text;
-                tblm.field_other = txt_fieldother.Text;
-                dbmanager.tbl_main.Add(tblm);
-                dbmanager.SaveChanges();
-                dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
-                pic = false;
+                MessageBox.Show("باید حداقل دو مقدار نام و سمت را وارد کنید ");
             }
-            givrownum();
+
         }
 
 
         private void btn_del_Click(object sender, EventArgs e)
         {
 
+
+
             try
             {
                 int row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-                tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == row);
-                string mtemp = string.Format("  آیا مایل به حذف ردیف : {0} با نام : {1} و سمت : {2} هستید ؟؟" , tblm.row,tblm.name,tblm.side);
-                DialogResult dres = MessageBox.Show( mtemp , "هشدار حذف",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-                if (dres==DialogResult.Yes)
+                db_card.tbl_mainRow tblm = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == row);
+
+                string mtemp = string.Format( tblm.name + " : آیا مایل به حذف رکورد با نام  " + Environment.NewLine + " : و سمت  " + tblm.side + " هستید ؟؟ ");
+                DialogResult dres = MessageBox.Show(mtemp, "هشدار حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dres == DialogResult.Yes)
                 {
-                    dbmanager.tbl_main.Remove(tblm);
-                    dbmanager.SaveChanges();
-                    dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList(); 
+                    dbmanagerr.tbl_main.Removetbl_mainRow(tblm);
+                    dbmanagerr.WriteXml("db_card.xml");
+
+                    dgv.DataSource = dbmanagerr.tbl_main;
+                    dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
+                    try
+                    {
+                        dgv_Click(sender, e);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("لطفا ابتدا یکی از رکوردها را برای حذف انتخاب کنید");
             }
-            givrownum();
+
+            dgv.DataSource = dbmanagerr.tbl_main;
         }
 
         private void dgv_Click(object sender, EventArgs e)
         {
-            row = int.Parse(dgv.SelectedCells[0].Value.ToString());
-            tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.id == row);
-            if (multiselect == true)
+            try
             {
-                
-                listBox1.Items.Add(dgv.SelectedCells[1].Value);
-                listBox2.Items.Add(tblm.name + " | " + tblm.side);
-                lselect.Add(Convert.ToInt32(dgv.SelectedCells[1].Value));
-            }
+                picb_image.ImageLocation = string.Empty;
+                row = int.Parse(dgv.SelectedCells[0].Value.ToString());
+                db_card.tbl_mainRow tblm = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == row);
+                if (multiselect == true)
+                {
+
+                    listBox1.Items.Add(dgv.SelectedCells[0].Value);
+                    listBox2.Items.Add(tblm.id + "     " + tblm.name + "     " + tblm.side);
+                    lselect.Add(Convert.ToInt32(dgv.SelectedCells[0].Value));
+                }
 
 
-            if (tblm.picture == "null")
-            {
-                picb_image.Image = Properties.Resources.person_unknown;
-            }
-            else if (tblm.picture != "null")
-            {
-                picb_image.ImageLocation = tblm.picture;
-            }
+                if (tblm.picture == "null")
+                {
+                    picb_image.Image = Properties.Resources.person_unknown;
+                    pic = false;
+                }
+                else if (tblm.picture != "null")
+                {
+                    picb_image.ImageLocation = tblm.picture.ToString();
+                    pic = true;
+                }
 
-            txt_name.Text = tblm.name;
-            cmbo_side.SelectedItem = tblm.side;
-            ofd.FileName = tblm.picture;
-            txt_floor.Text = tblm.floor;
-            txt_class.Text = tblm.classnumber;
-            txt_volunteer.Text = tblm.v_number;
-            txt_startnum.Text = tblm.v_start;
-            txt_endnum.Text = tblm.v_end;
-            txt_fieldmain.Text = tblm.filed_main;
-            txt_fieldother.Text = tblm.field_other;
+                txt_name.Text = tblm.name;
+                cmbo_side.SelectedItem = tblm.side;
+                ofd.FileName = tblm.picture;
+                txt_floor.Text = tblm.floor;
+                txt_class.Text = tblm.classnumber;
+                txt_volunteer.Text = tblm.v_number;
+                txt_startnum.Text = tblm.v_start;
+                txt_endnum.Text = tblm.v_end;
+                txt_fieldmain.Text = tblm.field_main;
+                txt_fieldother.Text = tblm.field_other;
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
+            pic = false;
             txt_name.Text = "";
             cmbo_side.SelectedIndex = -1;
             txt_floor.Text = "";
@@ -307,8 +317,8 @@ namespace card
             try
             {
                 lselect.Remove(Convert.ToInt32(listBox1.SelectedItem));
-                listBox2.Items.Remove(listBox2.SelectedItem);
                 listBox1.Items.Remove(listBox1.SelectedItem);
+                listBox2.Items.Remove(listBox2.SelectedItem);
             }
             catch (Exception)
             {
@@ -321,62 +331,48 @@ namespace card
             try
             {
 
+                db_card.tbl_mainRow tblm2 = dbmanagerr.tbl_main.FirstOrDefault(x => x.name == txt_name.Text);
+
                 foreach (var item in lselect)
                 {
+
+                    db_card.tbl_mainRow tblm = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == item);
+                    db_card.tbl_currentRow tblc2 = dbmanagerr.tbl_current.FirstOrDefault(x => x.name == tblm.name);
+
+                    if (tblc2 != null)
                     {
-                        tbl_main tblm = dbmanager.tbl_main.FirstOrDefault(x => x.row == item);
-                        tbl_current tblc = new tbl_current();
-                        tbl_current tblc2 = dbmanager.tbl_current.FirstOrDefault(x => x.name == tblm.name);
+                        DialogResult dr = MessageBox.Show("  نام مورد نظر در جدول وجود دارد . " + Environment.NewLine + "  نام  : " + tblc2.name + "    سمت  : " + tblc2.side + Environment.NewLine + " آیا مایل به وارد کردن دوباره نام هستید ؟؟", "هشدار نام تکراری", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if (tblc2 != null)
+
+
+                        if (dr == DialogResult.Yes)
                         {
-                            DialogResult dr = MessageBox.Show("  نام مورد نظر در جدول وجود دارد . " + "  نام  : " + tblc2.name + "    سمت  : " + tblc2.side + Environment.NewLine + " آیا مایل به وارد کردن دوباره نام هستید ؟؟", "هشدار نام تکراری", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            db_card.tbl_mainRow tblm3 = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == item);
 
-
-
-                            if (dr == DialogResult.Yes)
-                            {
-                                tblc.name = tblm.name;
-                                tblc.side = tblm.side;
-                                tblc.field_main = tblm.filed_main;
-                                tblc.field_other = tblm.field_other;
-                                tblc.floor = tblm.floor;
-                                tblc.classnumber = tblm.classnumber;
-                                tblc.v_start = tblc.v_start;
-                                tblc.v_end = tblm.v_end;
-                                tblc.v_number = tblm.v_number;
-                                tblc.picture = tblm.picture;
-                                dbmanager.tbl_current.Add(tblc);
-                                dbmanager.SaveChanges();
-                            }
+                            dbmanagerr.tbl_current.Addtbl_currentRow(tblm3.name, tblm3.side, tblm3.field_main, tblm3.field_other, tblm3.floor,
+                                tblm3.classnumber, tblm3.v_start, tblm3.v_end, tblm3.v_number, tblm3.picture);
+                            dbmanagerr.WriteXml("db_card.xml");
                         }
-                        else
-                        {
-                            tblc.name = tblm.name;
-                            tblc.side = tblm.side;
-                            tblc.field_main = tblm.filed_main;
-                            tblc.field_other = tblm.field_other;
-                            tblc.floor = tblm.floor;
-                            tblc.classnumber = tblm.classnumber;
-                            tblc.v_start = tblc.v_start;
-                            tblc.v_end = tblm.v_end;
-                            tblc.v_number = tblm.v_number;
-                            tblc.picture = tblm.picture;
-                            dbmanager.tbl_current.Add(tblc);
-                            dbmanager.SaveChanges();
-                        }
-
                     }
+                    else
+                    {
+                        db_card.tbl_mainRow tblm3 = dbmanagerr.tbl_main.FirstOrDefault(x => x.id == item);
 
-                    new frm_currentexam().Show();
-                    this.Enabled = false;
-                    this.Visible = false;
+                        dbmanagerr.tbl_current.Addtbl_currentRow(tblm3.name, tblm3.side, tblm3.field_main, tblm3.field_other, tblm3.floor,
+                            tblm3.classnumber, tblm3.v_start, tblm3.v_end, tblm3.v_number, tblm3.picture);
+                        dbmanagerr.WriteXml("db_card.xml");
+                    }
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("لطفا رکورد های مورد نظر را انتخاب کنید");
             }
+
+            new frm_currentexam().Show();
+            this.Enabled = false;
+            this.Visible = false;
+
         }
 
         private void btn_current_Click(object sender, EventArgs e)
@@ -388,37 +384,40 @@ namespace card
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dgv.DataSource = dbmanager.tbl_main.Where(x => x.name.Contains(textBox1.Text)).ToList();
-            if (textBox1.Text == "" || textBox1.Text == " ")
+
+            try
             {
-                dgv.DataSource = dbmanager.tbl_main.SqlQuery("select * from tbl_main order by side , name ").ToList();
+                dgv.DataSource = dbmanagerr.tbl_main.Where(x => x.name.Contains(textBox1.Text)).ToList();
+                if (textBox1.Text == "" || textBox1.Text == " ")
+                {
+
+                    dgv.DataSource = dbmanagerr.tbl_main;
+                }
+                foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
             }
-            foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
+            catch (Exception)
+            {
+            }
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                dgv.DataSource = dbmanager.tbl_main.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+
+                dgv.DataSource = dbmanagerr.tbl_main.Where(x => x.side == comboBox1.SelectedItem.ToString()).ToList();
+                dgv.Sort(dgv.Columns[1], ListSortDirection.Ascending);
                 foundedrecords.Text = "تعداد عناصر یافت شده :" + dgv.Rows.Count;
             }
             catch (Exception)
             {
-                MessageBox.Show("سمت مورد نظر یافت نشد");
             }
         }
 
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                listBox2.SelectedIndex = listBox1.SelectedIndex;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -436,7 +435,8 @@ namespace card
 
             try
             {
-                dgv.DataSource = dbmanager.tbl_current.SqlQuery("select * from tbl_current order by side , name ").ToList();
+
+                dgv.DataSource = dbmanagerr.tbl_main;
                 Exporttoexcel(dgv, bayganifilename.Text, Properties.Settings.Default.bayganifilepath);
                 MessageBox.Show("فایل اکسل شما با موفقیت در مسیر " + Properties.Settings.Default.bayganifilepath + "" + bayganifilename.Text + " ذخیره شد ");
             }
@@ -452,14 +452,14 @@ namespace card
             obex.Columns.ColumnWidth = 18;
 
 
-            for (int i = 1; i < 12; i++)
+            for (int i = 1; i < 11; i++)
             {
                 obex.Cells[1, i] = datagridviewid.Columns[i].HeaderText;
             }
 
             for (int i = 0; i < datagridviewid.Rows.Count; i++)
             {
-                for (int j = 1; j < 12; j++)
+                for (int j = 1; j < 11; j++)
                 {
                     if (datagridviewid.Rows[i].Cells[j].Value != null)
                     {
@@ -486,6 +486,32 @@ namespace card
             new frm_setting().Show();
             this.Visible = false;
             this.Enabled = false;
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Delete)
+                {
+                    btn_del.PerformClick();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void listBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox1.SelectedIndex = listBox2.SelectedIndex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

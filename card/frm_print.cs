@@ -18,17 +18,18 @@ namespace card
         {
             InitializeComponent();
         }
-        db_cardEntities dbmanager = new db_cardEntities();
-        
-        int min=0;
-        int max=0;
-        
+        db_card dbmanagerr = new db_card();
+        //db_cardEntities dbmanager = new db_cardEntities();
+
+        int min = 0;
+        int max = 0;
+
         private void frm_print_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = false;
             lblt3.Text = Properties.Settings.Default.str_orgname;
-            lblt4.Text = Properties.Settings.Default.str_exname; 
+            lblt4.Text = Properties.Settings.Default.str_exname;
             lblt5.Text = Properties.Settings.Default.str_year;
             lbl_date.Text = Properties.Settings.Default.date;
             if (Properties.Settings.Default.logo == "تعاونی سازمان سنجش")
@@ -48,10 +49,54 @@ namespace card
 
 
 
+
+            if (Properties.Settings.Default.multiprint == false)
+            {
+                if (cancel == false)
+                {
+
+                    db_card.tbl_currentRow tblc = dbmanagerr.tbl_current.FirstOrDefault(x => x.id == Properties.Settings.Default.singleprint);
+                    lbl_name.Text = tblc.name;
+                    lbl_side.Text = tblc.side;
+                    lbl_field_main.Text = tblc.field_main;
+                    lbl_field_other.Text = tblc.field_other;
+                    lbl_floor.Text = tblc.floor;
+                    lbl_class.Text = tblc.classnumber;
+                    lbl_v_number.Text = tblc.v_number;
+                    lbl_v_start.Text = tblc.v_start;
+                    lbl_v_end.Text = tblc.v_end;
+                    if (tblc.picture != "null")
+                    {
+                        picb_image.ImageLocation = @"" + tblc.picture;
+                    }
+                    else
+                    {
+                        picb_image.Image = Properties.Resources.person_unknown;
+                    }
+
+                    print();
+                }
+            }
+            else
+            {
+                Properties.Settings.Default.multiprint = false;
+                new frm_currentexam().Visible = true;
+                new frm_currentexam().Enabled = true;
+                this.Close();
+                return;
+            }
+
+
+
+
+
+
+
             if (Properties.Settings.Default.multiprint == true)
             {
-                min = dbmanager.tbl_current.Min(x => x.id);
-                max = dbmanager.tbl_current.Max(x => x.id);
+
+                min = dbmanagerr.tbl_current.Min(x => Convert.ToInt32(x.id));
+                max = dbmanagerr.tbl_current.Max(x => Convert.ToInt32(x.id));
 
                 for (int i = min; i <= max; i++)
                 {
@@ -59,7 +104,7 @@ namespace card
                     {
                         try
                         {
-                            tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == i);
+                            db_card.tbl_currentRow tblc = dbmanagerr.tbl_current.FirstOrDefault(x => x.id == i);
                             lbl_name.Text = tblc.name;
                             lbl_side.Text = tblc.side;
                             lbl_field_main.Text = tblc.field_main;
@@ -78,7 +123,7 @@ namespace card
                                 picb_image.Image = Properties.Resources.person_unknown;
                             }
 
-                            
+
                             print();
                         }
                         catch (Exception)
@@ -103,41 +148,6 @@ namespace card
 
 
 
-            if (Properties.Settings.Default.multiprint == false)
-            {
-                    if (cancel == false)
-                    {
-
-                        tbl_current tblc = dbmanager.tbl_current.FirstOrDefault(x => x.id == Properties.Settings.Default.id);
-                        lbl_name.Text = tblc.name;
-                        lbl_side.Text = tblc.side;
-                        lbl_field_main.Text = tblc.field_main;
-                        lbl_field_other.Text = tblc.field_other;
-                        lbl_floor.Text = tblc.floor;
-                        lbl_class.Text = tblc.classnumber;
-                        lbl_v_number.Text = tblc.v_number;
-                        lbl_v_start.Text = tblc.v_start;
-                        lbl_v_end.Text = tblc.v_end;
-                        if (tblc.picture != "null")
-                        {
-                            picb_image.ImageLocation = @"" + tblc.picture;
-                        }
-                        else
-                        {
-                            picb_image.Image = Properties.Resources.person_unknown;
-                        }
-
-                        print();
-                    }
-            }
-            else
-            {
-                Properties.Settings.Default.multiprint = false;
-                new frm_currentexam().Visible = true;
-                new frm_currentexam().Enabled = true;
-                this.Close();
-                return;
-            }
 
 
 
@@ -154,14 +164,22 @@ namespace card
 
         public void print()
         {
+
+            //PrintDocument recordDoc = new PrintDocument();
+            //recordDoc.DefaultPageSettings.PaperSize = new PaperSize("210 x 297 mm", 800, 800);
+            //PrintPreviewDialog ppvw = new PrintPreviewDialog();
+            //ppvw.Document = recordDoc;
+            //ppvw.ShowDialog();
+
             PrintDocument pd = new PrintDocument();
+            pd.DefaultPageSettings.PaperSize = new PaperSize("118 x 75 mm", 118, 75);
             pd.PrintPage += new PrintPageEventHandler(PrintImage);
             pd.Print();
         }
 
         private void PrintImage(object o, PrintPageEventArgs e)
         {
-            
+
             int x = SystemInformation.WorkingArea.X;
             int y = SystemInformation.WorkingArea.Y;
             int width = this.Width;
@@ -176,7 +194,7 @@ namespace card
             this.DrawToBitmap(img, bounds);
             Point p = new Point(100, 100);
             e.Graphics.DrawImage(img, p);
-            img.Save(@"C:\latestimage.jpg");
+            img.Save(@"D:\latestimage.jpg");
         }
 
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)

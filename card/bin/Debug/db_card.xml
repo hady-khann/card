@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes"?>
+<db_card xmlns="http://tempuri.org/db_card.xsd">
+  <tbl_current>
+    <id>1</id>
+    <name>1</name>
+    <side>امانات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_current>
+  <tbl_main>
+    <id>1</id>
+    <name>1</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>2</id>
+    <name>1</name>
+    <side>مدیر حوزه </side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>3</id>
+    <name>1</name>
+    <side>امانات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>4</id>
+    <name>9</name>
+    <side>امانات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>5</id>
+    <name>9</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>6</id>
+    <name>9</name>
+    <side>مدیر حوزه </side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>7</id>
+    <name>7</name>
+    <side>مدیر حوزه </side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>8</id>
+    <name>7</name>
+    <side>مدیر حوزه </side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>9</id>
+    <name>7</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>10</id>
+    <name>7</name>
+    <side>امانات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>11</id>
+    <name>4</name>
+    <side>امانات</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>12</id>
+    <name>4</name>
+    <side>حراست</side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+  <tbl_main>
+    <id>13</id>
+    <name>4</name>
+    <side>مدیر حوزه </side>
+    <field_main />
+    <field_other />
+    <floor />
+    <classnumber />
+    <v_start />
+    <v_end />
+    <v_number />
+    <picture>null</picture>
+  </tbl_main>
+</db_card>

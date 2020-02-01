@@ -106,23 +106,27 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(12, 64);
             this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1258, 256);
+            this.dgv.Size = new System.Drawing.Size(1177, 170);
             this.dgv.TabIndex = 0;
             this.dgv.Click += new System.EventHandler(this.dgv_Click);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             // 
             // btn_del
             // 
+            this.btn_del.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.Location = new System.Drawing.Point(21, 400);
+            this.btn_del.Location = new System.Drawing.Point(13, 312);
             this.btn_del.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(113, 34);
@@ -133,8 +137,9 @@
             // 
             // btn_multiselect
             // 
+            this.btn_multiselect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_multiselect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_multiselect.Location = new System.Drawing.Point(1076, 662);
+            this.btn_multiselect.Location = new System.Drawing.Point(1030, 558);
             this.btn_multiselect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_multiselect.Name = "btn_multiselect";
             this.btn_multiselect.Size = new System.Drawing.Size(141, 34);
@@ -154,42 +159,43 @@
             this.toolStripMenuItem3});
             this.conm_frm_reg.Name = "conm_frm_reg";
             this.conm_frm_reg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.conm_frm_reg.Size = new System.Drawing.Size(179, 88);
+            this.conm_frm_reg.Size = new System.Drawing.Size(195, 100);
             this.conm_frm_reg.Opening += new System.ComponentModel.CancelEventHandler(this.conm_frm_reg_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(194, 28);
             this.toolStripMenuItem1.Text = "تنظیمات";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(191, 6);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(194, 28);
             this.toolStripMenuItem2.Text = "بازگشت";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(191, 6);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(194, 28);
             this.toolStripMenuItem3.Text = "خروج";
             // 
             // btn_ed
             // 
-            this.btn_ed.Location = new System.Drawing.Point(21, 462);
+            this.btn_ed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_ed.Location = new System.Drawing.Point(13, 374);
             this.btn_ed.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ed.Name = "btn_ed";
             this.btn_ed.Size = new System.Drawing.Size(113, 34);
@@ -200,7 +206,8 @@
             // 
             // btn_insert
             // 
-            this.btn_insert.Location = new System.Drawing.Point(21, 338);
+            this.btn_insert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_insert.Location = new System.Drawing.Point(13, 250);
             this.btn_insert.Margin = new System.Windows.Forms.Padding(4);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(113, 34);
@@ -211,6 +218,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.lblt3);
             this.groupBox2.Controls.Add(this.lblt5);
@@ -219,7 +227,7 @@
             this.groupBox2.Controls.Add(this.lblt1);
             this.groupBox2.Controls.Add(this.lblt2);
             this.groupBox2.Controls.Add(this.picb_image);
-            this.groupBox2.Location = new System.Drawing.Point(164, 346);
+            this.groupBox2.Location = new System.Drawing.Point(156, 239);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(688, 452);
             this.groupBox2.TabIndex = 25;
@@ -563,7 +571,8 @@
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(21, 522);
+            this.btn_reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_reset.Location = new System.Drawing.Point(13, 434);
             this.btn_reset.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(113, 34);
@@ -574,7 +583,8 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1076, 700);
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_add.Location = new System.Drawing.Point(1030, 596);
             this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(141, 34);
@@ -585,8 +595,9 @@
             // 
             // btn_finish
             // 
+            this.btn_finish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_finish.Location = new System.Drawing.Point(998, 740);
+            this.btn_finish.Location = new System.Drawing.Point(952, 636);
             this.btn_finish.Margin = new System.Windows.Forms.Padding(4);
             this.btn_finish.Name = "btn_finish";
             this.btn_finish.Size = new System.Drawing.Size(141, 34);
@@ -597,8 +608,9 @@
             // 
             // btn_dellist
             // 
+            this.btn_dellist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_dellist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dellist.Location = new System.Drawing.Point(928, 700);
+            this.btn_dellist.Location = new System.Drawing.Point(882, 596);
             this.btn_dellist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_dellist.Name = "btn_dellist";
             this.btn_dellist.Size = new System.Drawing.Size(141, 34);
@@ -609,7 +621,8 @@
             // 
             // btn_current
             // 
-            this.btn_current.Location = new System.Drawing.Point(928, 662);
+            this.btn_current.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_current.Location = new System.Drawing.Point(882, 558);
             this.btn_current.Margin = new System.Windows.Forms.Padding(4);
             this.btn_current.Name = "btn_current";
             this.btn_current.Size = new System.Drawing.Size(141, 34);
@@ -677,19 +690,21 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1216, 355);
+            this.label14.Location = new System.Drawing.Point(1164, 248);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 20);
+            this.label14.Size = new System.Drawing.Size(26, 20);
             this.label14.TabIndex = 57;
-            this.label14.Text = "ردیف";
+            this.label14.Text = "ID";
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1052, 355);
+            this.label15.Location = new System.Drawing.Point(1017, 250);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 20);
             this.label15.TabIndex = 56;
@@ -697,26 +712,28 @@
             // 
             // listBox2
             // 
-            this.listBox2.Enabled = false;
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.HorizontalScrollbar = true;
             this.listBox2.ItemHeight = 22;
-            this.listBox2.Location = new System.Drawing.Point(868, 390);
+            this.listBox2.Location = new System.Drawing.Point(860, 283);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(328, 268);
             this.listBox2.TabIndex = 53;
+            this.listBox2.SelectedValueChanged += new System.EventHandler(this.listBox2_SelectedValueChanged);
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBox1.Enabled = false;
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 22;
-            this.listBox1.Location = new System.Drawing.Point(1202, 390);
+            this.listBox1.Location = new System.Drawing.Point(1118, 283);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(68, 268);
             this.listBox1.TabIndex = 52;
-            this.listBox1.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
             // 
             // foundedrecords
             // 
@@ -730,8 +747,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(21, 643);
+            this.button1.Location = new System.Drawing.Point(13, 536);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 33);
@@ -742,8 +760,9 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(21, 692);
+            this.button2.Location = new System.Drawing.Point(13, 585);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 33);
@@ -754,9 +773,10 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(30, 747);
+            this.label16.Location = new System.Drawing.Point(22, 640);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(86, 20);
             this.label16.TabIndex = 62;
@@ -764,8 +784,9 @@
             // 
             // bayganifilename
             // 
+            this.bayganifilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bayganifilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bayganifilename.Location = new System.Drawing.Point(9, 771);
+            this.bayganifilename.Location = new System.Drawing.Point(1, 664);
             this.bayganifilename.Name = "bayganifilename";
             this.bayganifilename.Size = new System.Drawing.Size(141, 27);
             this.bayganifilename.TabIndex = 63;
@@ -785,7 +806,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::card.Properties.Resources.setting;
-            this.pictureBox2.Location = new System.Drawing.Point(1207, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(1126, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -799,7 +820,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1282, 816);
+            this.ClientSize = new System.Drawing.Size(1201, 699);
             this.ContextMenuStrip = this.conm_frm_reg;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
