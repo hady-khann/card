@@ -15,62 +15,62 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1725671AD7FA4B71BC66C5818CB4320D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2140D80180BA480899134DA80AD60AD3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3E8F0BFC5B464CE0A0808F1380D91206"
+        "MsmKey" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7042578DA50449C4840DBEE2C92F14E8"
+        "MsmKey" = "8:_7B1AF7468B024046AA9E51E858C4D9CB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B360CFD3E4974AA7BAD139ED0533B8E8"
+        "MsmKey" = "8:_96548208F4D14D69A065D907DB9CC482"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EC277332D44349889014800535C719B6"
+        "MsmKey" = "8:_B3758633F8C444869B120FADB89AE046"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F5FA5F6FB3814AB68207C9C33E47BB55"
+        "MsmKey" = "8:_D5701508148F44D7A2317FB43746FDA2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE08E1C307394BC09484DA411075727D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3E8F0BFC5B464CE0A0808F1380D91206"
+        "OwnerKey" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7042578DA50449C4840DBEE2C92F14E8"
+        "OwnerKey" = "8:_96548208F4D14D69A065D907DB9CC482"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EC277332D44349889014800535C719B6"
+        "OwnerKey" = "8:_7B1AF7468B024046AA9E51E858C4D9CB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -163,26 +163,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1725671AD7FA4B71BC66C5818CB4320D"
-            {
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.pdb"
-            "TargetName" = "8:card.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2140D80180BA480899134DA80AD60AD3"
             {
             "SourcePath" = "8:..\\..\\card\\Images\\shamsiicon-fa.ico"
@@ -203,14 +183,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3E8F0BFC5B464CE0A0808F1380D91206"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_57B6EE23ABD94C499DBD651AF8EA6F45"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:card, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:card, Version=2.0.7338.5431, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3E8F0BFC5B464CE0A0808F1380D91206"
+                    "_57B6EE23ABD94C499DBD651AF8EA6F45"
                     {
                     "Name" = "8:card.exe"
                     "Attributes" = "3:512"
@@ -234,65 +214,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7042578DA50449C4840DBEE2C92F14E8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_7042578DA50449C4840DBEE2C92F14E8"
-                    {
-                    "Name" = "8:Microsoft.QualityTools.Testing.Fakes.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\Microsoft.QualityTools.Testing.Fakes.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B360CFD3E4974AA7BAD139ED0533B8E8"
-            {
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.exe.config"
-            "TargetName" = "8:card.exe.config"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EC277332D44349889014800535C719B6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B1AF7468B024046AA9E51E858C4D9CB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EC277332D44349889014800535C719B6"
+                    "_7B1AF7468B024046AA9E51E858C4D9CB"
                     {
                     "Name" = "8:EntityFramework.SqlServer.dll"
                     "Attributes" = "3:512"
@@ -316,10 +245,81 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F5FA5F6FB3814AB68207C9C33E47BB55"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_96548208F4D14D69A065D907DB9CC482"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_96548208F4D14D69A065D907DB9CC482"
+                    {
+                    "Name" = "8:Microsoft.QualityTools.Testing.Fakes.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\Microsoft.QualityTools.Testing.Fakes.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3758633F8C444869B120FADB89AE046"
             {
             "SourcePath" = "8:..\\..\\card\\bin\\Debug\\db_card.xml"
             "TargetName" = "8:db_card.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5701508148F44D7A2317FB43746FDA2"
+            {
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.pdb"
+            "TargetName" = "8:card.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE08E1C307394BC09484DA411075727D"
+            {
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.exe.config"
+            "TargetName" = "8:card.exe.config"
             "Tag" = "8:"
             "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
             "Condition" = "8:"
@@ -393,7 +393,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Card Manager SETUP"
         "ProductCode" = "8:{D835FCDF-D8CA-4702-A3AD-DA2F56DBAD45}"
-        "PackageCode" = "8:{2B9315AA-3B5D-443C-B7F7-187426ED9977}"
+        "PackageCode" = "8:{C4BF1241-ACC5-47CC-B877-7903CFD2132B}"
         "UpgradeCode" = "8:{43D920B5-A0AC-4585-B999-37CC0B39ADC1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -513,7 +513,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CF5FC7C36D16418D90A1A1B32C55B5CE"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_ACEE03B141DA4C6A9AE614824F46A4CC"
             {
             "Name" = "8:Card Manager.exe"
             "Arguments" = "8:"
@@ -521,7 +521,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_3E8F0BFC5B464CE0A0808F1380D91206"
+            "Target" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
             "Folder" = "8:_30BD7D8B2CE64A1BB9AF84CBC291BFCD"
             "WorkingFolder" = "8:_2F3E74FEC681435AA540B40F4D024892"
             "Icon" = "8:_2140D80180BA480899134DA80AD60AD3"

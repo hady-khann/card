@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
@@ -135,6 +136,7 @@
     <EmbeddedResource Include="frm_start.resx">
       <DependentUpon>frm_start.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="db_card.xsc">
       <DependentUpon>db_card.xsd</DependentUpon>
     </None>

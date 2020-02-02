@@ -41,7 +41,11 @@ namespace card
             dgv.Columns[8].HeaderText = "تا شماره";
             dgv.Columns[9].HeaderText = "تعداد داوطلبان";
             dgv.Columns[10].HeaderText = "آدرس تصویر";
-            
+
+            int id = Convert.ToInt32(dgv.SelectedCells[0].Value);
+            Properties.Settings.Default.singleprint = id;
+            Properties.Settings.Default.Save();
+
         }
 
         private void بازگشتToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,9 +160,9 @@ namespace card
             Properties.Settings.Default.multiprint = true;
             Properties.Settings.Default.Save();
 
+            new frm_print().Show();
             this.Enabled = false;
             this.Visible = false;
-            new frm_print().Show();
 
         }
 

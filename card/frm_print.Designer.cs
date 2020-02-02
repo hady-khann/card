@@ -464,11 +464,13 @@ namespace card
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frm_print";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "copy";
             this.Load += new System.EventHandler(this.frm_print_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_print_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_logo)).EndInit();
