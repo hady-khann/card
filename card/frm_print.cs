@@ -8,13 +8,17 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace card
 {
+    
     public partial class frm_print : Form
     {
+        int x = 0;
+        int y = 0;
         public frm_print()
         {
             InitializeComponent();
@@ -58,6 +62,13 @@ namespace card
                     {
                         int row = Convert.ToInt32(Properties.Settings.Default.singleprint);
                         db_card.tbl_currentRow tblc = dbmanagerr.tbl_current.FirstOrDefault(x => x.id == row);
+                        if (tblc.picture != "null")
+                        {
+                            string t = tblc.picture.ToString();
+                            picb_image.Image = Image.FromFile(@"" + t);
+                        }
+
+
                         lbl_name.Text = tblc.name;
                         lbl_side.Text = tblc.side;
                         lbl_field_main.Text = tblc.field_main;
@@ -67,15 +78,8 @@ namespace card
                         lbl_v_number.Text = tblc.v_number;
                         lbl_v_start.Text = tblc.v_start;
                         lbl_v_end.Text = tblc.v_end;
-                        if (tblc.picture != "null")
-                        {
-                            picb_image.ImageLocation = @"" + tblc.picture;
-                        }
-                        else
-                        {
-                            picb_image.Image = Properties.Resources.person_unknown;
-                        }
 
+                        this.Refresh();
                         print();
                     }
                 }
@@ -93,6 +97,12 @@ namespace card
                             try
                             {
                                 db_card.tbl_currentRow tblc = dbmanagerr.tbl_current.FirstOrDefault(x => x.id == i);
+                                if (tblc.picture != "null")
+                                {
+                                    string t = tblc.picture.ToString();
+                                    picb_image.Image = Image.FromFile(@"" + t);
+                                }
+
                                 lbl_name.Text = tblc.name;
                                 lbl_side.Text = tblc.side;
                                 lbl_field_main.Text = tblc.field_main;
@@ -111,7 +121,7 @@ namespace card
                                     picb_image.Image = Properties.Resources.person_unknown;
                                 }
 
-
+                                this.Refresh();
                                 print();
                             }
                             catch (Exception)
@@ -128,6 +138,7 @@ namespace card
                             return;
                         }
                     }
+                    Thread.Sleep(4000);
                 }
 
 
@@ -156,20 +167,22 @@ namespace card
             //ppvw.ShowDialog();
 
             PrintDocument pd = new PrintDocument();
-            pd.DefaultPageSettings.PaperSize = new PaperSize("118 x 75 mm", 118, 75);
+            pd.DefaultPageSettings.PaperSize = new PaperSize("210 x 297 mm", 118, 81);
             pd.PrintPage += new PrintPageEventHandler(PrintImage);
+
+            //PrintPreviewDialog ppvw = new PrintPreviewDialog();
+            //ppvw.Document = pd;
+            //ppvw.ShowDialog();
+
             pd.Print();
         }
 
         private void PrintImage(object o, PrintPageEventArgs e)
         {
+            int width = (this.Width * 5);
+            int height = (this.Height * 5);
 
-            int x = SystemInformation.WorkingArea.X;
-            int y = SystemInformation.WorkingArea.Y;
-            int width = this.Width;
-            int height = this.Height;
-
-            Rectangle bounds = new Rectangle(x, y, width, height);
+            Rectangle bounds = new Rectangle(x, y, width, height + 200);
 
             Bitmap img = new Bitmap(width, height);
 
@@ -212,6 +225,11 @@ namespace card
             {
                 cancel = true;
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

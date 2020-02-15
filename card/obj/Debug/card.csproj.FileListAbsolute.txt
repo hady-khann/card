@@ -118,3 +118,4 @@ D:\GitHub\card\card\bin\Debug\card.exe.config
 D:\GitHub\card\card\bin\Debug\card.exe
 D:\GitHub\card\card\bin\Debug\card.pdb
 D:\GitHub\card\card\obj\Debug\card.csproj.CopyComplete
+D:\GitHub\card\card\obj\Debug\card.csprojAssemblyReference.cache

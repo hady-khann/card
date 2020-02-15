@@ -100,7 +100,7 @@ namespace card
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(7, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(587, 221);
+            this.groupBox1.Size = new System.Drawing.Size(551, 209);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             // 
@@ -108,7 +108,7 @@ namespace card
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(177, 18);
+            this.label21.Location = new System.Drawing.Point(135, 19);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(56, 24);
             this.label21.TabIndex = 31;
@@ -118,7 +118,7 @@ namespace card
             // 
             this.lbl_v_end.AutoSize = true;
             this.lbl_v_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_v_end.Location = new System.Drawing.Point(139, 190);
+            this.lbl_v_end.Location = new System.Drawing.Point(139, 177);
             this.lbl_v_end.Name = "lbl_v_end";
             this.lbl_v_end.Size = new System.Drawing.Size(52, 24);
             this.lbl_v_end.TabIndex = 30;
@@ -128,7 +128,7 @@ namespace card
             // 
             this.lbl_v_start.AutoSize = true;
             this.lbl_v_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_v_start.Location = new System.Drawing.Point(205, 190);
+            this.lbl_v_start.Location = new System.Drawing.Point(221, 177);
             this.lbl_v_start.Name = "lbl_v_start";
             this.lbl_v_start.Size = new System.Drawing.Size(52, 24);
             this.lbl_v_start.TabIndex = 29;
@@ -138,7 +138,7 @@ namespace card
             // 
             this.lbl_floor.AutoSize = true;
             this.lbl_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_floor.Location = new System.Drawing.Point(521, 190);
+            this.lbl_floor.Location = new System.Drawing.Point(489, 177);
             this.lbl_floor.Name = "lbl_floor";
             this.lbl_floor.Size = new System.Drawing.Size(52, 24);
             this.lbl_floor.TabIndex = 28;
@@ -148,7 +148,7 @@ namespace card
             // 
             this.lbl_class.AutoSize = true;
             this.lbl_class.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_class.Location = new System.Drawing.Point(320, 190);
+            this.lbl_class.Location = new System.Drawing.Point(316, 177);
             this.lbl_class.Name = "lbl_class";
             this.lbl_class.Size = new System.Drawing.Size(100, 24);
             this.lbl_class.TabIndex = 27;
@@ -158,7 +158,7 @@ namespace card
             // 
             this.lbl_v_number.AutoSize = true;
             this.lbl_v_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_v_number.Location = new System.Drawing.Point(18, 190);
+            this.lbl_v_number.Location = new System.Drawing.Point(14, 177);
             this.lbl_v_number.Name = "lbl_v_number";
             this.lbl_v_number.Size = new System.Drawing.Size(88, 24);
             this.lbl_v_number.TabIndex = 26;
@@ -168,7 +168,7 @@ namespace card
             // 
             this.lbl_field_other.AutoSize = true;
             this.lbl_field_other.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_field_other.Location = new System.Drawing.Point(14, 107);
+            this.lbl_field_other.Location = new System.Drawing.Point(8, 89);
             this.lbl_field_other.Name = "lbl_field_other";
             this.lbl_field_other.Size = new System.Drawing.Size(88, 24);
             this.lbl_field_other.TabIndex = 25;
@@ -178,7 +178,7 @@ namespace card
             // 
             this.lbl_field_main.AutoSize = true;
             this.lbl_field_main.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_field_main.Location = new System.Drawing.Point(238, 107);
+            this.lbl_field_main.Location = new System.Drawing.Point(205, 89);
             this.lbl_field_main.Name = "lbl_field_main";
             this.lbl_field_main.Size = new System.Drawing.Size(88, 24);
             this.lbl_field_main.TabIndex = 24;
@@ -188,7 +188,7 @@ namespace card
             // 
             this.lbl_date.AutoSize = true;
             this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_date.Location = new System.Drawing.Point(484, 107);
+            this.lbl_date.Location = new System.Drawing.Point(447, 89);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(88, 24);
             this.lbl_date.TabIndex = 23;
@@ -200,17 +200,17 @@ namespace card
             this.lbl_side.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_side.Location = new System.Drawing.Point(6, 18);
             this.lbl_side.Name = "lbl_side";
-            this.lbl_side.Size = new System.Drawing.Size(153, 24);
+            this.lbl_side.Size = new System.Drawing.Size(105, 24);
             this.lbl_side.TabIndex = 22;
-            this.lbl_side.Text = " -----------------------";
+            this.lbl_side.Text = " ---------------";
             this.lbl_side.Click += new System.EventHandler(this.lbl_side_Click);
             // 
             // lbl_name
             // 
             this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(268, 19);
+            this.lbl_name.Location = new System.Drawing.Point(239, 20);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(173, 23);
+            this.lbl_name.Size = new System.Drawing.Size(129, 23);
             this.lbl_name.TabIndex = 32;
             this.lbl_name.Text = "------------";
             // 
@@ -218,7 +218,7 @@ namespace card
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(205, 165);
+            this.label10.Location = new System.Drawing.Point(205, 146);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 24);
             this.label10.TabIndex = 20;
@@ -228,7 +228,7 @@ namespace card
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(139, 165);
+            this.label9.Location = new System.Drawing.Point(140, 146);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 24);
             this.label9.TabIndex = 19;
@@ -238,7 +238,7 @@ namespace card
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(470, 69);
+            this.label2.Location = new System.Drawing.Point(438, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 24);
             this.label2.TabIndex = 3;
@@ -248,7 +248,7 @@ namespace card
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(155, 140);
+            this.label8.Location = new System.Drawing.Point(158, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 24);
             this.label8.TabIndex = 15;
@@ -258,7 +258,7 @@ namespace card
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 151);
+            this.label7.Location = new System.Drawing.Point(21, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 24);
             this.label7.TabIndex = 13;
@@ -268,7 +268,7 @@ namespace card
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(309, 140);
+            this.label6.Location = new System.Drawing.Point(307, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 24);
             this.label6.TabIndex = 11;
@@ -278,17 +278,18 @@ namespace card
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(534, 140);
+            this.label5.Location = new System.Drawing.Point(497, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "طبقه";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 69);
+            this.label4.Location = new System.Drawing.Point(14, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 7;
@@ -298,7 +299,7 @@ namespace card
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 69);
+            this.label3.Location = new System.Drawing.Point(206, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 24);
             this.label3.TabIndex = 5;
@@ -308,7 +309,7 @@ namespace card
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(447, 19);
+            this.label1.Location = new System.Drawing.Point(413, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 24);
             this.label1.TabIndex = 0;
@@ -317,11 +318,11 @@ namespace card
             // lblt3
             // 
             this.lblt3.AutoSize = true;
-            this.lblt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblt3.Location = new System.Drawing.Point(229, 71);
+            this.lblt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt3.Location = new System.Drawing.Point(193, 71);
             this.lblt3.Name = "lblt3";
             this.lblt3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt3.Size = new System.Drawing.Size(144, 17);
+            this.lblt3.Size = new System.Drawing.Size(156, 16);
             this.lblt3.TabIndex = 23;
             this.lblt3.Text = "سازمان سنجش آموزش کشور";
             this.lblt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,11 +330,11 @@ namespace card
             // lblt5
             // 
             this.lblt5.AutoSize = true;
-            this.lblt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblt5.Location = new System.Drawing.Point(247, 128);
+            this.lblt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt5.Location = new System.Drawing.Point(232, 121);
             this.lblt5.Name = "lblt5";
             this.lblt5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt5.Size = new System.Drawing.Size(87, 25);
+            this.lblt5.Size = new System.Drawing.Size(68, 20);
             this.lblt5.TabIndex = 22;
             this.lblt5.Text = "سال ۱۳۹۷";
             this.lblt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,11 +342,11 @@ namespace card
             // lblt4
             // 
             this.lblt4.AutoSize = true;
-            this.lblt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblt4.Location = new System.Drawing.Point(193, 103);
+            this.lblt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt4.Location = new System.Drawing.Point(184, 98);
             this.lblt4.Name = "lblt4";
             this.lblt4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt4.Size = new System.Drawing.Size(220, 25);
+            this.lblt4.Size = new System.Drawing.Size(183, 20);
             this.lblt4.TabIndex = 21;
             this.lblt4.Text = "آزمون کارشناسی ارشد ناپیوسته";
             this.lblt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -353,7 +354,7 @@ namespace card
             // picb_logo
             // 
             this.picb_logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picb_logo.Location = new System.Drawing.Point(504, 21);
+            this.picb_logo.Location = new System.Drawing.Point(468, 12);
             this.picb_logo.Name = "picb_logo";
             this.picb_logo.Size = new System.Drawing.Size(90, 120);
             this.picb_logo.TabIndex = 20;
@@ -362,11 +363,11 @@ namespace card
             // lblt1
             // 
             this.lblt1.AutoSize = true;
-            this.lblt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblt1.Location = new System.Drawing.Point(245, 21);
+            this.lblt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt1.Location = new System.Drawing.Point(212, 21);
             this.lblt1.Name = "lblt1";
             this.lblt1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt1.Size = new System.Drawing.Size(111, 17);
+            this.lblt1.Size = new System.Drawing.Size(115, 16);
             this.lblt1.TabIndex = 18;
             this.lblt1.Text = "جمهوری اسلامی ایران";
             this.lblt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,11 +375,11 @@ namespace card
             // lblt2
             // 
             this.lblt2.AutoSize = true;
-            this.lblt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblt2.Location = new System.Drawing.Point(220, 46);
+            this.lblt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblt2.Location = new System.Drawing.Point(187, 46);
             this.lblt2.Name = "lblt2";
             this.lblt2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblt2.Size = new System.Drawing.Size(160, 17);
+            this.lblt2.Size = new System.Drawing.Size(162, 16);
             this.lblt2.TabIndex = 19;
             this.lblt2.Text = "وزارت علوم ، تحقیقات و فناوری";
             this.lblt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,7 +387,8 @@ namespace card
             // picb_image
             // 
             this.picb_image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picb_image.Location = new System.Drawing.Point(13, 21);
+            this.picb_image.ErrorImage = global::card.Properties.Resources.person_unknown;
+            this.picb_image.Location = new System.Drawing.Point(7, 12);
             this.picb_image.Name = "picb_image";
             this.picb_image.Size = new System.Drawing.Size(90, 120);
             this.picb_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +454,7 @@ namespace card
             this.gb.Controls.Add(this.lblt4);
             this.gb.Location = new System.Drawing.Point(5, 9);
             this.gb.Name = "gb";
-            this.gb.Size = new System.Drawing.Size(604, 388);
+            this.gb.Size = new System.Drawing.Size(565, 369);
             this.gb.TabIndex = 25;
             this.gb.TabStop = false;
             // 
@@ -460,7 +462,7 @@ namespace card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 403);
+            this.ClientSize = new System.Drawing.Size(577, 384);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -15,62 +15,62 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_025F193A064D4380871A3EECC341882B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17B3D6433B044AA2AD83EB53DF619637"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2140D80180BA480899134DA80AD60AD3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
+        "MsmKey" = "8:_21CE4F1919EC45069C4A2F5AA44D921C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7B1AF7468B024046AA9E51E858C4D9CB"
+        "MsmKey" = "8:_471527EEE15441ACA942348416B870C0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_96548208F4D14D69A065D907DB9CC482"
+        "MsmKey" = "8:_9186ACA70B79421FA377FE4FE8BAF726"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B3758633F8C444869B120FADB89AE046"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D5701508148F44D7A2317FB43746FDA2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DE08E1C307394BC09484DA411075727D"
+        "MsmKey" = "8:_EC33C08C14D148BEB5DD76CCFBA0F6F8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
+        "OwnerKey" = "8:_471527EEE15441ACA942348416B870C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_96548208F4D14D69A065D907DB9CC482"
+        "OwnerKey" = "8:_025F193A064D4380871A3EECC341882B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7B1AF7468B024046AA9E51E858C4D9CB"
+        "OwnerKey" = "8:_17B3D6433B044AA2AD83EB53DF619637"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -163,96 +163,14 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2140D80180BA480899134DA80AD60AD3"
-            {
-            "SourcePath" = "8:..\\..\\card\\Images\\shamsiicon-fa.ico"
-            "TargetName" = "8:shamsiicon-fa.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_57B6EE23ABD94C499DBD651AF8EA6F45"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:card, Version=2.0.7338.5431, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_57B6EE23ABD94C499DBD651AF8EA6F45"
-                    {
-                    "Name" = "8:card.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B1AF7468B024046AA9E51E858C4D9CB"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_7B1AF7468B024046AA9E51E858C4D9CB"
-                    {
-                    "Name" = "8:EntityFramework.SqlServer.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\EntityFramework.SqlServer.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_96548208F4D14D69A065D907DB9CC482"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_025F193A064D4380871A3EECC341882B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_96548208F4D14D69A065D907DB9CC482"
+                    "_025F193A064D4380871A3EECC341882B"
                     {
                     "Name" = "8:Microsoft.QualityTools.Testing.Fakes.dll"
                     "Attributes" = "3:512"
@@ -276,7 +194,58 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3758633F8C444869B120FADB89AE046"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_17B3D6433B044AA2AD83EB53DF619637"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_17B3D6433B044AA2AD83EB53DF619637"
+                    {
+                    "Name" = "8:EntityFramework.SqlServer.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\EntityFramework.SqlServer.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2140D80180BA480899134DA80AD60AD3"
+            {
+            "SourcePath" = "8:..\\..\\card\\Images\\shamsiicon-fa.ico"
+            "TargetName" = "8:shamsiicon-fa.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_21CE4F1919EC45069C4A2F5AA44D921C"
             {
             "SourcePath" = "8:..\\..\\card\\bin\\Debug\\db_card.xml"
             "TargetName" = "8:db_card.xml"
@@ -296,10 +265,21 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5701508148F44D7A2317FB43746FDA2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_471527EEE15441ACA942348416B870C0"
             {
-            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.pdb"
-            "TargetName" = "8:card.pdb"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:card, Version=2.0.7350.23839, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_471527EEE15441ACA942348416B870C0"
+                    {
+                    "Name" = "8:card.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.exe"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
             "Condition" = "8:"
@@ -316,10 +296,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE08E1C307394BC09484DA411075727D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9186ACA70B79421FA377FE4FE8BAF726"
             {
             "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.exe.config"
             "TargetName" = "8:card.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC33C08C14D148BEB5DD76CCFBA0F6F8"
+            {
+            "SourcePath" = "8:..\\..\\card\\bin\\Debug\\card.pdb"
+            "TargetName" = "8:card.pdb"
             "Tag" = "8:"
             "Folder" = "8:_2F3E74FEC681435AA540B40F4D024892"
             "Condition" = "8:"
@@ -513,7 +513,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_ACEE03B141DA4C6A9AE614824F46A4CC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CE26FF51807248A5BEDF3A04FB572E5B"
             {
             "Name" = "8:Card Manager.exe"
             "Arguments" = "8:"
@@ -521,7 +521,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_57B6EE23ABD94C499DBD651AF8EA6F45"
+            "Target" = "8:_471527EEE15441ACA942348416B870C0"
             "Folder" = "8:_30BD7D8B2CE64A1BB9AF84CBC291BFCD"
             "WorkingFolder" = "8:_2F3E74FEC681435AA540B40F4D024892"
             "Icon" = "8:_2140D80180BA480899134DA80AD60AD3"
